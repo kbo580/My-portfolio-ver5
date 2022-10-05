@@ -21,7 +21,7 @@ body,h1,h2,h3,h4,h5,p,ul,li,ol,dl,dt,dd,figure,input,textarea {
 }
 
 body {
-  font-family:sans-serif;
+  font-family: 'Noto Sans JP', sans-serif;
   font-size: rem(14);
   letter-spacing: 0.1em;
   line-height: 1.5;
@@ -49,7 +49,7 @@ header,main,section,footer, div, ul, li, h1,h2,h3,dl,dt,dd{
   max-width: 1080px;
   width: 100%;
   // background-color: rgba(241,92,168,0.2);
-  border: 1px dashed #000;
+  // border: 1px dashed #000;
   padding: 0 20px;
 }
 
@@ -60,6 +60,7 @@ header,main,section,footer, div, ul, li, h1,h2,h3,dl,dt,dd{
 .heading-common{
   letter-spacing: 0.1em;
   line-height: 1;
+  font-family: "Montserrat";
 }
 
 .sec-heading{
@@ -83,9 +84,41 @@ section{
   padding-top: 150px;
 }
 
+//ボタン
 .btn{
   font-weight: bold;
+  position: relative;
+  padding-right: 50px;
+  transition: all .4s;
+  font-family: "Montserrat";
 
+
+  // 矢印
+  &::before,
+  &::after{
+    content: "";
+    position: absolute;
+    height: 2px;
+    transition: all 0.3s;
+    background: #333;
+  }
+
+  // 横棒
+  &::before{
+    width: 45px;
+    bottom: 0%;
+    right: 0%;
+  }
+
+  // 縦棒
+  &::after{
+    width: 15px;
+    transform: rotate(35deg);
+    right: 0%;
+    bottom: 23%;
+  }
+
+  // ブロック用
   &-wrap{
     text-align: right;
     margin-top: 50px;
@@ -96,19 +129,36 @@ section{
 }
 
 .content-body{
-    margin-top: 80px;
+  margin-top: 80px;
 }
 
+// サムネイル
 .thum{
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 3 / 2;
   object-fit: cover;
   width: 100%;
   height: 100%;
 }
 
+// hover時の動き 
+@media (hover: hover){
+  .btn{
+
+    // 横棒
+    &:hover::before{
+      right: -5%;
+    }
+
+     // 縦棒
+    &:hover::after{
+      right: -5%;
+    }
+  }
+}
+
 @media (min-width: 765px) {
 .contents{
-  border: 1px solid #000;
+  // border: 1px solid #000;
 }
 
 body {
@@ -128,14 +178,9 @@ section{
 }
 
 .btn{
-  font-weight: bold;
 
   &-wrap{
-    text-align: right;
-    margin-top: 50px;
-  }
-
-  &--more{
+    margin-top: 80px;
   }
 }
 
@@ -216,10 +261,8 @@ nav{
   }
 
   &__cont{
-    border: 1px solid #000;
     margin: 100px auto 0;
-    max-width: 720px;
-    position: relative;
+    max-width: 900px;
   }
 
   //見出しの説明
@@ -228,24 +271,10 @@ nav{
   }
 
 }
-.as{
-  position: absolute;
-  top:50%;
-  left: -40%;
-  display: block;
-  transform: translateY(-50%)  rotate(-90deg);
-  font-size: rem(50);
-  font-weight: bold;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: #f5f5f5;
-  // opacity: 0.2;
-  font-weight: bold; /*太字*/
-  color: transparent; /*文字を透明に*/
-  background: rgba(120, 120, 120, 0.3); /*背景色*/
-  background-clip: text; /*背景を文字の形に切り抜く*/
-  -webkit-background-clip: text; /*ベンダーフレックス*/
-  text-shadow: 0.04em 0.04em 0.06em rgb(255 255 255 /55%); /*半透明の白い影を付ける*/
+
+.ashirai{
+  display: none;
+
 }
 
 ///////////// webdesign //////////////
@@ -258,11 +287,10 @@ nav{
   // webdesignのリスト 
   &__item-list{
     width: 100%;
-    // max-width: 900px;
-    // margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    position: relative;
     
     //justify-content: space-between対策
     &::before{
@@ -367,7 +395,6 @@ nav{
     filter: blur(2px);
   }
   
-  
   .webdesign__item:hover .webdesign__body{
     opacity:1;
   }
@@ -377,6 +404,10 @@ nav{
 .blog{
   &__image-wrap{
     margin-top: 40px;
+  }
+
+  &__body{
+    position: relative;
   }
 }
 
@@ -398,16 +429,56 @@ nav{
 // バナーでのスライダー
 .banner{
   &-swiper-container{
-    position: relative;
     padding: 0 20px;
     margin-top: 40px;
+    position: relative;
   }
-}
+} 
 
 .swiper-slide{
   width: 100%;
   height: 100%;
+  overflow: hidden;
 }
+
+.swiper-button-next,
+.swiper-button-prev{
+  user-select: none;
+  transition: all 0.3s;
+  color: #212529;
+  border-radius: 50%;
+  box-shadow: 3px 3px 5px #e3e5ea, -3px -3px 5px #fff;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 50%;
+  // background-color: #ddd;
+
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after{
+  content: "";
+  width: 12px;
+  height: 12px;
+  border-top: 2px solid #333;
+  border-right: 2px solid #333;
+  position: absolute;
+}
+
+// 前への矢印
+.swiper-button-prev:after {
+  transform: rotate(-135deg);
+  left: 15px;
+}
+
+// 次への矢印
+.swiper-button-next:after {
+  transform: rotate(45deg);
+  right: 15px;
+}
+
+
 
 
 @media (min-width: 765px) {
@@ -415,6 +486,26 @@ nav{
     &__cont{
       margin-top: 150px;
     }
+  }
+  //あしらい
+  .ashirai{
+    position: absolute;
+    left: -9%;
+    display: block;
+    transform: rotate(-90deg);
+    transform-origin: 0 50%;
+    font-size: rem(50);
+    font-weight: bold;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #f5f5f5;
+    font-weight: bold; 
+    color: transparent;
+    background: rgba(120, 120, 120, 0.3); 
+    background-clip: text; 
+    -webkit-background-clip: text; 
+    text-shadow: 0.04em 0.04em 0.06em rgb(255 255 255 /55%); 
+    font-family: "Montserrat";
   }
 
   ///////////// webdesign //////////////
@@ -428,6 +519,11 @@ nav{
     &__item{
       width: calc((100% - 60px) / 3);
       margin-top: 30px;
+    }
+
+    //あしらい
+    &__ashirai{
+      top:91%;
     }
   }
 
@@ -459,6 +555,11 @@ nav{
       margin: 40px auto 0;
       max-width: 500px;
     }
+
+    //あしらい
+    &__ashirai{
+      top:70%;
+    }
   }
 
 }
@@ -478,7 +579,6 @@ nav{
   padding: 30px 0 20px;
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
-  z-index: 2;
 
   &__image{
     width: 100px;
@@ -489,6 +589,7 @@ nav{
   &__content-frame{
     width: 100%;
     padding: 10px 6.25vw;
+    padding: 10px 5vw;
   }
 
   &__text{
@@ -527,19 +628,11 @@ nav{
 	to{opacity:1}
 }
 
-// &__wrapper{
-//   padding: 60px 20px;
-//   margin-left: calc(50% - 50vw);
-//   margin-right: calc(50% - 50vw);
-//   z-index: 1;
-// }
-
-
-
 
 .about-left{
   // border: 1px solid #000;
   margin-top: 40px;
+  width: 100%;
 
   &__heading{
     font-size: rem(20);
@@ -556,9 +649,43 @@ nav{
 }
 
 @media (min-width: 765px) {
+  .about{
 
+    &__wrap{
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row-reverse;
+      align-items: center;
+    }
+  }
+
+  .about-right{
+    margin-left: 0;
+    margin-right: 0;
+    width: 54%;
+  
+    &__image{
+      width: 120px;
+      height: 120px;
+    }
+  
+    &__text{
+      font-size: rem(20);
+      padding: 1em 0.8em;
+      min-height: 110px;
+    }
+  }
+
+  .about-left{
+    width: calc((100% - 54%) - 30px);
+  
+    &__heading{
+      font-size: rem(24);
+    }
+  }
 
 }
+
 /* -------------------------------------------- */
 /* i can do */
 /* -------------------------------------------- */
@@ -583,6 +710,9 @@ nav{
 
   &__image{
     aspect-ratio: 4 / 3;
+    // aspect-ratio: 16 / 9;
+    width: 100%;
+    object-fit: cover;
   }
 
   &__desc{
@@ -591,7 +721,41 @@ nav{
 }
 
 @media (min-width: 765px) {
+  .can{
+    &-heading{
+      text-align: right;
+    }
+  
+    &__wrap{
+      max-width: 700px;
+      margin-left:  auto;
+      margin-right:  auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
 
+    &__list{
+      margin-top: 0px;
+      width: calc((100% - 60px) / 2);
+
+      &:nth-child(even){
+        margin-top: 100px;
+      }
+    }
+  
+    &__title{
+      font-size: rem(24);
+    }
+  
+    &__image-wrap{
+      margin-top: 16px; 
+    }
+  
+    &__desc{
+      margin-top: 20px;
+    }
+  }
 
 }
 
@@ -607,12 +771,16 @@ nav{
 
   }
 
+  br{
+    display: none;
+  }
+
   &__btn-wrap{
     margin-top: 80px;
   }
 
   &__btn{
-    border: 1px solid #000;
+    border: 2px solid #000;
     padding: 20px;
     display: block;
     text-align: center;
@@ -620,11 +788,30 @@ nav{
     font-weight: bold;
     max-width: 300px;
     margin: 0 auto;
+    border-radius: 4px;
+    font-weight: bold;
   }
 
 }
-@media (min-width: 765px) {
 
+@media (min-width: 765px) {
+  .contact{
+    background: linear-gradient(to bottom, #fff 0 36%, #ddd 36% 100%);
+    padding-bottom: 90px;
+    
+  
+    &__desc{
+      text-align: center;
+    }
+
+    br{
+      display: block;
+    }
+  
+    &__btn-wrap{
+      margin-top: 90px;
+    } 
+  }
 
 }
 
