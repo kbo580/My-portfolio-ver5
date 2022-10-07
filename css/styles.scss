@@ -3,9 +3,15 @@
   box-sizing: border-box;
 }
 
+
+//変数
 @function rem($px){
   @return ($px/16) *1rem;
 }
+
+// $mainColor: ;
+$textColor: #333333;
+$accsentColor: #fc2;
 
 
 body,h1,h2,h3,h4,h5,p,ul,li,ol,dl,dt,dd,figure,input,textarea {
@@ -25,7 +31,8 @@ body {
   font-size: rem(14);
   letter-spacing: 0.1em;
   line-height: 1.5;
-  color: #707070;
+  color: $textColor;
+  background: #fafafa;
 }
 
 a { 
@@ -36,6 +43,10 @@ a {
 img{
   max-width:100%;
   vertical-align: bottom;
+}
+
+i{
+  padding-left: 8px;
 }
 
 
@@ -140,6 +151,33 @@ section{
   height: 100%;
 }
 
+/* Topへ戻るボタン */
+.top{
+  display: block;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 5;
+  right: 20px; 
+  position:fixed;
+  bottom: 2%;
+  box-shadow: 2px 2px 0px #e3e5ea, -3px -3px 0px #fff;
+
+  &::after{
+    content: "";
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 12px 15px 12px;
+    border-color: transparent transparent $accsentColor  transparent;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
 // hover時の動き 
 @media (hover: hover){
   .btn{
@@ -195,54 +233,246 @@ section{
 /* -------------------------------------------- */
 /* header */
 /* -------------------------------------------- */
-header{
-  border: 1px solid #000;
-  padding: 0 100px;
-  height: 100px;
+.header{
+  padding: 0 20px;
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+//サイトタイトル
+.site-title{
+  font-family: "Montserrat";
+  line-height: 1.5;
+  letter-spacing: 0.1em;
+  font-size: rem(18);
+  z-index: 2;
+}
+
+//サイトタイトル内のリンク
+.site-link{
+  display: block;
+
+  //スクロールした時の動き
+  &.fixed{
+    position: fixed;
+    top: 20px;
+    animation: fadein .4s ease;
+    font-size: rem(14);
+    padding: 1em;
+    border-radius: 100vw;
+    box-shadow: 2px 2px 0px #e3e5ea, -3px -3px 0px #fff;
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.66);
+  }
+}
+
+@keyframes fadein{
+  0%{
+    transform: translateY(-100px);
+  }
+  100%{
+    transform: translateY(0);
+  }
+}
+
+//--------------バーガーメニュー----------------
+.burger{
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+
+  //スクロールした時の動き
+  &.fixed{
+    position: fixed;
+    right: 20px;
+    animation: fadein .4s ease;
+  }
+}
+
+//バーガーメニューの棒
+.bar{
+  width: 100%;
+  height: 3px;
+  border-radius: 6px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: #333;
+  transform: translate(-50%, 0%);
+  transition: transform .4s, opacity .4s;
+
+  &:nth-of-type(1){
+    transform:translate(-50%,10px);
+  }
+  
+  &:nth-of-type(3){
+    transform:translate(-50%,-10px);
+  } 
+}
+
+//クリックした時の動き
+.burger.active .bar:nth-of-type(2){
+  opacity: 0;
+}
+
+.burger.active .bar:nth-of-type(1){
+  transform: translateX(-50%) rotate(-45deg);
+}
+
+.burger.active .bar:nth-of-type(3){
+  transform: translateX(-50%) rotate(45deg);
 }
 
 @media (min-width: 765px) {
+  .header{
+    padding: 0 20px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+  
+  //サイトタイトル
+  .site-title{
+    font-family: "Montserrat";
+    line-height: 1.5;
+    letter-spacing: 0.1em;
+    font-size: rem(28);
+  
+    //スクロールした時の動き
+    &.fixed{
+      font-size: rem(16);
+    }
+  }
 
+  //サイトタイトル内のリンク
+  .site-link{
+    margin-left: calc(100 / 1280 *100vw);
+    margin-right: calc(100 / 1280 *100vw);
+  }
 
+  //--------------バーガーメニュー----------------
+  .burger{
+    display: none;
+  }
 }
 
 /* -------------------------------------------- */
 /* nav */
 /* -------------------------------------------- */
-nav{
-  background: lightcyan;
+//共通設定
+.nav{
+  //ナビアイテムのリンク
+  &__link{
+    font-size: rem(16);
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: "Montserrat";
+    transition: opacity .6s;
+  }
+}
+
+.sp-nav{
+  position: absolute;
+  top:0;
+  left: 0;
+  transform: translate(200%);
+  width: 100%;
+  height: 100vh;
+  background: radial-gradient( #FFF, #000);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform .6s;
+
+  //navにactiveがついた時
+  &.active{
+    transform: translate(0px);
+  }
+
+  //ナビアイテム
+  &__list-item{
+
+    //ナビアイテムの最初以外
+    &:not(:first-child){
+      margin-top: 40px;
+    }
+  }
+}
+
+.pc-nav{
+  position: fixed;
+  top: 100px;
+  right: 5%;
+  z-index: 3;
+  transform: rotate(-90deg);
+  transform-origin: 100% 0%;
+  background: transparent;
+
   display: none;
+
+   //ナビリスト
+  &__list{
+    display: flex;
+    flex-direction: row-reverse;
+  }
+
+  //ナビアイテム
+  &__list-item{
+
+    //ナビアイテムの最初以外
+    &:not(:first-child){
+      margin-top: 0;
+      margin-right: 20px; //横並びにした時の横のmargin
+    }
+  }
+}
+
+//ナビアイテムhover時の動き
+@media (hover: hover){
+  .nav__link:hover{
+    opacity: .6;
+  }
 }
 
 @media (min-width: 765px) {
+  .sp-nav{
+    display: none;
+  }
 
+  .pc-nav{
+    display: block;
+  }
 
 }
-.left-con{
-  background-color: lightgreen;
-  flex:1;
-}
-
 
 /* -------------------------------------------- */
 /* mv */
 /* -------------------------------------------- */
 .mv{
   width: 100%;
+  padding: 0 20px;
 
-  div{
-    height: 500px;
+  //画像
+  &__wrap{
+    height: calc(100vh - 140px);
     background-color: #ddd;
-    position: absolute;
-    top: 100px;
-    left: 100px;
-    width: calc(100% - 200px);
-
-
   }
 }
 @media (min-width: 765px) {
+  .mv{
 
+    //画像
+    &__wrap{
+      height: calc(100vh - 200px);
+      margin-left: calc(100 / 1280 *100vw);
+      margin-right: calc(100 / 1280 *100vw);
+    }
+  }
 
 }
 
@@ -372,7 +602,7 @@ nav{
   &__text{
     width: 100%;
     margin-top: 20px;
-    font-size: rem(14);
+    font-size: rem(12);
   }
 }
 
@@ -404,6 +634,7 @@ nav{
 .blog{
   &__image-wrap{
     margin-top: 40px;
+    display: block;
   }
 
   &__body{
@@ -447,12 +678,11 @@ nav{
   transition: all 0.3s;
   color: #212529;
   border-radius: 50%;
-  box-shadow: 3px 3px 5px #e3e5ea, -3px -3px 5px #fff;
   width: 40px;
   height: 40px;
   position: absolute;
   top: 50%;
-  // background-color: #ddd;
+  background-color: rgba(0, 0, 0, 0.2);
 
 }
 
@@ -478,15 +708,13 @@ nav{
   right: 15px;
 }
 
-
-
-
 @media (min-width: 765px) {
   .works{
     &__cont{
       margin-top: 150px;
     }
   }
+
   //あしらい
   .ashirai{
     position: absolute;
@@ -630,7 +858,6 @@ nav{
 
 
 .about-left{
-  // border: 1px solid #000;
   margin-top: 40px;
   width: 100%;
 
@@ -702,21 +929,26 @@ nav{
     text-align: center;
     font-weight: bold;
     font-size: rem(20);
+
+    &-num{
+      font-size: rem(28);
+      font-family:Montserrat;
+    }
   }
 
   &__image-wrap{
-    margin-top: 16px; 
+    margin-top: 8px; 
   }
 
   &__image{
     aspect-ratio: 4 / 3;
-    // aspect-ratio: 16 / 9;
     width: 100%;
     object-fit: cover;
   }
 
   &__desc{
     margin-top: 20px;
+    font-size: rem(14);
   }
 }
 
@@ -746,14 +978,10 @@ nav{
   
     &__title{
       font-size: rem(24);
-    }
-  
-    &__image-wrap{
-      margin-top: 16px; 
-    }
-  
-    &__desc{
-      margin-top: 20px;
+      &-num{
+        font-size: rem(32);
+        font-family:Montserrat;
+      }
     }
   }
 
@@ -763,7 +991,7 @@ nav{
 /* contact */
 /* -------------------------------------------- */
 .contact{
-  background: linear-gradient(to bottom, #fff 0 30%, #ddd 30% 100%);
+  background: linear-gradient(to bottom, #fafafa 0 30%, rgb(237, 237, 237) 30% 100%);
   padding-bottom: 90px;
   
 
@@ -780,7 +1008,7 @@ nav{
   }
 
   &__btn{
-    border: 2px solid #000;
+    border: 2px solid #121212;
     padding: 20px;
     display: block;
     text-align: center;
@@ -788,15 +1016,40 @@ nav{
     font-weight: bold;
     max-width: 300px;
     margin: 0 auto;
-    border-radius: 4px;
     font-weight: bold;
+    transition: all .6s;
+    position: relative;
+    
+    &::after{
+      content: "";
+      width: 15px;
+      height: 15px;
+      background: linear-gradient(135deg, transparent 0% 50%, #121212 50% 100%);
+      position: absolute;
+      right: 4px;
+      bottom: 4px;
+      transition: all .6s;
+    }
   }
 
 }
 
+@media (hover: hover){
+  .contact__btn:hover{
+    background-color: #121212;
+    color: #fff;
+    border: 2px solid #333333;
+  }
+
+  .contact__btn:hover::after{
+    background: linear-gradient(135deg, transparent 0% 50%, #fff 50% 100%);
+  }
+}
+
 @media (min-width: 765px) {
   .contact{
-    background: linear-gradient(to bottom, #fff 0 36%, #ddd 36% 100%);
+    background: linear-gradient(to bottom, #fafafa
+    0 36%, rgb(237, 237, 237) 36% 100%);
     padding-bottom: 90px;
     
   
@@ -836,6 +1089,56 @@ nav{
 
 }
 
+/* -------------------------------------------- */
+/*  */
+/* -------------------------------------------- */
+/* 下から */
+.fadeUpTrigger{
+  opacity: 0;
+}
+
+.fadeUpAnime {
+  animation-name:fadeUpAnime;
+  animation-duration: 1s;
+  animation-fill-mode:forwards;
+  opacity:0;
+}
+
+.delay-2{
+  animation-delay: 0.4s;
+}
+  
+.delay-3{
+  animation-delay: 0.6s;
+}
+
+.delay-4{
+  animation-delay: 0.8s;
+}
+
+@keyframes fadeUpAnime{
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media (min-width: 765px) {
+
+
+}
+/* -------------------------------------------- */
+/*  */
+/* -------------------------------------------- */
+
+@media (min-width: 765px) {
+
+
+}
 /* -------------------------------------------- */
 /*  */
 /* -------------------------------------------- */

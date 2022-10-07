@@ -10,62 +10,100 @@
   <link rel="stylesheet" href="css/styles.scss">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.1/css/all.css">
 
+  <!-- googlefont -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Montserrat:wght@600&family=Noto+Sans+JP&display=swap" rel="stylesheet">
+
+
   <title></title>
 </head>
 
 <body>
 
-    <header>
-      <h1>
-        <a href="#">Yuta Kobayashi’s <br>Portfolio</a>
-      </h1>
+    <header class="header">
+        <h1 class="site-title">
+          <a href="#" class="site-link">Yuta Kobayashi’s <br>Portfolio</a>
+        </h1>
+
+      <div class="burger">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+
+      <!-- sp用nav -->
+      <nav class="sp-nav nav">
+        <ul class="sp-nav__list nav__list">
   
-      <!-- <aside>
-        <nav class="aside__nav">
-          <ul class="aside__nav-list">
-    
-            <li class="aside__nav-list-item">
-              <a href="#" class="aside__nav-link">home</a>
-            </li>
-    
-            <li class="aside__nav-list-item">
-              <a href="#" class="aside__nav-link">works</a>
-            </li>
-    
-            <li class="aside__nav-list-item">
-              <a href="#" class="aside__nav-link">about</a>
-            </li>
-    
-            <li class="aside__nav-list-item">
-              <a href="#" class="aside__nav-link">i can do</a>
-            </li>
-            <li class="aside__nav-list-item">
-              <a href="#" class="aside__nav-link">contact</a>
-            </li>
-    
-            <li class="aside__nav-list-item">
-              <a href="#" class="aside__nav-link">blog</a>
-            </li>
-            
-          </ul>
-        </nav>
-      </aside> -->
+          <li class="sp-nav__list-item nav__list-item">
+            <a href="#" class="sp-nav__link nav__link">home</a>
+          </li>
+  
+          <li class="sp-nav__list-item nav__list-item">
+            <a href="#works" class="sp-nav__link nav__link">works</a>
+          </li>
+  
+          <li class="sp-nav__list-item nav__list-item">
+            <a href="#about" class="sp-nav__link nav__link">about</a>
+          </li>
+  
+          <li class="sp-nav__list-item nav__list-item">
+            <a href="#can" class="sp-nav__link nav__link">i can do</a>
+          </li>
+          <li class="sp-nav__list-item nav__list-item">
+            <a href="#contact" class="sp-nav__link nav__link">contact</a>
+          </li>
+  
+          <li class="sp-nav__list-item nav__list-item">
+            <a href="#" class="sp-nav__link nav__link">blog<i class="fa-solid fa-up-right-from-square"></i></a>
+          </li>
+          
+        </ul>
+      </nav>
+      <!-- /sp用nav -->
+  
+      <!-- pc用nav -->
+      <nav class="pc-nav nav">
+        <ul class="pc-nav__list nav__list">
+  
+          <li class="pc-nav__list-item nav__list-item">
+            <a href="#" class="pc-nav__link nav__link">home</a>
+          </li>
+  
+          <li class="pc-nav__list-item nav__list-item">
+            <a href="#works" class="pc-nav__link nav__link">works</a>
+          </li>
+  
+          <li class="pc-nav__list-item nav__list-item">
+            <a href="#about" class="pc-nav__link nav__link">about</a>
+          </li>
+  
+          <li class="pc-nav__list-item nav__list-item">
+            <a href="#can" class="pc-nav__link nav__link">i can do</a>
+          </li>
+          <li class="pc-nav__list-item nav__list-item">
+            <a href="#contact" class="pc-nav__link nav__link">contact</a>
+          </li>
+  
+          <li class="pc-nav__list-item nav__list-item">
+            <a href="#" class="pc-nav__link nav__link">blog<i class="fa-solid fa-up-right-from-square"></i></a>
+          </li>
+          
+        </ul>
+      </nav>
+      <!-- /pc用nav -->
+
     </header>
 
     <main>
-      <!-- <div class="mv">
-        <div>
-
-        </div>
-        
-      </div> -->
+      <div class="mv">
+        <div class="mv__wrap"></div>
+      </div>
       <!-- /mv -->
       
       <div class="contents inner">
-        <section class="works">
+        <section id="works"  class="works">
           <h2 class="sec-heading heading-common works__heading">works</h2>
     
           <div class="works__body content-body">
@@ -195,12 +233,12 @@
             <!-- ブログ -->
             <div class="blog__wrap works__cont">
               <h3 class="sub-heading heading-common">ブログ</h3>
-              <p class="works__desc">学習のアウトプットと備忘録のためのブログです</p>
+              <p class="works__desc">学習のアウトプットと備忘録のためのブログです<i class="fa-solid fa-up-right-from-square"></i><br>（外部サイトへ移動します）</p>
 
               <div class="blog__body">
-                <figure class="blog__image-wrap">
+                <a href="" class="blog__image-wrap">
                   <img src="images/blog-image.png" alt="">
-                </figure>
+                </a>
   
                 <span class="ashirai blog__ashirai">BLOG</span>
               </div>
@@ -257,7 +295,7 @@
         </section>
         <!-- /works -->
   
-        <section class="about">
+        <section id="about"  class="about">
           <h2 class="about-heading sec-heading heading-common">about</h2>
 
           <div class="about__wrap content-body">
@@ -298,31 +336,31 @@
         </section>
         <!-- /about -->
   
-        <section class="can">
+        <section id="can"  class="can">
           <h2 class="can-heading sec-heading heading-common">i can do</h2>
 
           <div class="can__wrap content-body">
 
-            <ul class="can__list">
-              <li class="can__title">Webデザイン</li>
+            <ul class="can__list fadeUpTrigger">
+              <li class="can__title"><span class="can__title-num">01</span>.Webデザイン</li>
               <li class="can__image-wrap"><img src="images/webdesihn.png" alt="" class="can__image"></li>
               <li class="can__desc">サイトマップの設計からデザインを作成し、それをもとにWebサイトを製作します。またタブレットやスマートフォンに対応させたレスポンシブデザインもできます。</li>
             </ul>
       
-            <ul class="can__list">
-              <li class="can__title">コーディング</li>
+            <ul class="can__list fadeUpTrigger delay-2">
+              <li class="can__title"><span class="can__title-num">02</span>.コーディング</li>
               <li class="can__image-wrap"><img src="images/cording.png" alt="" class="can__image"></li>
               <li class="can__desc">ワイヤーフレームをもとに忠実に再現をすることを心がけています。またコードを書く際はわかりやすく、メンテナンスがし易いコードを書くように努めています。</li>
             </ul>
 
-            <ul class="can__list">
-              <li class="can__title">CMS化</li>
+            <ul class="can__list fadeUpTrigger delay-3">
+              <li class="can__title"><span class="can__title-num">03</span>.CMS化</li>
               <li class="can__image-wrap"><img src="images/cms.png" alt="" class="can__image"></li>
               <li class="can__desc">Word Pressなどに代表されるものでHTMLとCSSで作成されたサイトを自身で容易に管理、更新ができるようにオリジナルテーマを作成できます。</li>
             </ul>
       
-            <ul class="can__list">
-              <li class="can__title">コミュニケーション</li>
+            <ul class="can__list fadeUpTrigger delay-4">
+              <li class="can__title"><span class="can__title-num">04</span>.コミュニケーション</li>
               <li class="can__image-wrap"><img src="images/communication.png" alt="" class="can__image"></li>
               <li class="can__desc">接客業での経験を活かした話を傾聴力とコミュニケーションを取ることが得意です。</li>
             </ul>
@@ -332,7 +370,7 @@
         </section>
         <!-- /contact -->
   
-        <section class="contact">
+        <section id="contact" class="contact">
           <h2 class="sec-heading heading-common">contact</h2>
           <div class="contact__wrap content-body">
 
@@ -354,6 +392,9 @@
 
   <footer class="footer">
     <p class="footer__copy">©2022 Yuta Kobayashi</p>
+
+    <!-- Topへ戻るボタン -->
+    <div id="top" class="top"></div>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
