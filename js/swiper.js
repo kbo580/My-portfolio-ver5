@@ -19,3 +19,16 @@ var swiper = new Swiper('.banner-swiper', {
 		prevEl: '.swiper-button-prev',
 	}
 });
+
+var mySwiper = new Swiper ('.mv-swiper', {
+  loop: true,
+  autoplay: {
+    delay: 4000,
+  },
+  
+  speed: 2000,
+  effect: 'fade',
+  fadeEffect: {
+    crossFade: true
+  },
+})
