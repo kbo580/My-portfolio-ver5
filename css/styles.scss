@@ -12,6 +12,7 @@
 // $mainColor: ;
 $textColor: #333333;
 $accsentColor: #fc2;
+$whiteBase: #fafafa;
 
 
 body,h1,h2,h3,h4,h5,p,ul,li,ol,dl,dt,dd,figure,input,textarea {
@@ -32,7 +33,16 @@ body {
   letter-spacing: 0.1em;
   line-height: 1.5;
   color: $textColor;
-  background: #fafafa;
+  background: $whiteBase;
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+footer {
+  margin-top: auto;
 }
 
 a { 
@@ -162,7 +172,8 @@ section{
   right: 20px; 
   position:fixed;
   bottom: 2%;
-  box-shadow: 2px 2px 0px #e3e5ea, -3px -3px 0px #fff;
+  background: $whiteBase;
+  box-shadow: 2px 2px 0px #e3e5ea;
 
   &::after{
     content: "";
@@ -240,6 +251,7 @@ section{
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  position: relative;
 }
 
 //サイトタイトル
@@ -265,6 +277,7 @@ section{
     border-radius: 100vw;
     box-shadow: 2px 2px 0px #e3e5ea, -3px -3px 0px #fff;
     text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.66);
+    background: rgba(250, 250, 250, 0.8);
   }
 }
 
@@ -283,7 +296,7 @@ section{
   height: 30px;
   cursor: pointer;
   position: relative;
-  z-index: 1;
+  z-index: 11;
 
   //スクロールした時の動き
   &.fixed{
@@ -377,10 +390,9 @@ section{
 }
 
 .sp-nav{
-  position: absolute;
+  position: fixed;
   top:0;
-  left: 0;
-  transform: translate(200%);
+  right: -200%;
   width: 100%;
   height: 100vh;
   background: radial-gradient( #FFF, #000);
@@ -388,10 +400,13 @@ section{
   align-items: center;
   justify-content: center;
   transition: transform .6s;
+  transition: right .6s;
+  z-index: 10;
 
   //navにactiveがついた時
   &.active{
     transform: translate(0px);
+    right: 0;
   }
 
   //ナビアイテム
@@ -402,6 +417,10 @@ section{
       margin-top: 40px;
     }
   }
+}
+
+body.active{
+  overflow-y: hidden;
 }
 
 .pc-nav{
@@ -415,7 +434,7 @@ section{
 
   display: none;
 
-   //ナビリスト
+  //ナビリスト
   &__list{
     display: flex;
     flex-direction: row-reverse;
@@ -460,9 +479,152 @@ section{
   //画像
   &__wrap{
     height: calc(100vh - 140px);
-    background-color: #ddd;
+  }
+
+  //スライドのタイトル
+  &__slide-title {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    font-size: 32px;
+    padding: 1rem 2rem;
+    z-index: 1;
+    color: $textColor;
+    background-color: $whiteBase;
+    font-family: "Montserrat";
+  }
+
+  &__site-title{
+    color: #fff;
+    letter-spacing: 0.15em;
+    font-size: 33px;
+    font-size: min(max(33px, calc(2.0625rem + ((1vw - 3.75px) * 5.1934))), 80px);
+    // padding: 200px 0px;
+    // padding: 300px 0px 200px;
+    position: absolute;
+    z-index: 2;
+    bottom: 0;
+    left: 20px;
+    font-family: "Montserrat";
   }
 }
+
+.bgextend{
+	animation-name:bgextendAnimeBase;
+	animation-duration:1s;
+	animation-fill-mode:forwards;
+	position: relative;
+	overflow: hidden;
+	opacity:0;
+}
+
+@keyframes bgextendAnimeBase{
+  from {
+    opacity:0;
+  }
+
+  to {
+    opacity:1;  
+  }
+}
+
+/*中の要素*/
+.bgappear{
+	animation-name:bgextendAnimeSecond;
+	animation-duration:1s;
+	animation-delay: 0.6s;
+	animation-fill-mode:forwards;
+	opacity: 0;
+}
+
+@keyframes bgextendAnimeSecond{
+	0% {
+	opacity: 0;
+	}
+
+	100% {
+	opacity: 1;
+  }
+}
+
+.bgLRextend::before{
+	animation-name:bgLRextendAnime;
+	animation-duration:1s;
+	animation-fill-mode:forwards;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #fc2;
+}
+
+@keyframes bgLRextendAnime{
+	0% {
+		transform-origin:left;
+		transform:scaleX(0);
+	}
+
+	50% {
+		transform-origin:left;
+		transform:scaleX(1);
+	}
+
+	50.001% {
+		transform-origin:right;
+	}
+
+	100% {
+		transform-origin:right;
+		transform:scaleX(0);
+	}
+}
+
+
+.bgappearTrigger,
+.bgLRextendTrigger{
+  opacity: 0;
+}
+
+
+//メインビジュアルのswiper
+.mv-swiper {
+  width: 100%;
+  height: 100%;
+  
+  .swiper-wrapper {
+
+    .swiper-slide {
+      overflow: hidden;
+      position: relative;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .swiper-slide-prev,
+    .swiper-slide-active,
+    .swiper-slide-duplicate-active {
+      img {
+        animation: zoom 10s linear 0s 1 normal both;  
+      }
+    }
+  }
+}
+
+@keyframes zoom {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.15);
+  }
+}
+
 @media (min-width: 765px) {
   .mv{
 
@@ -471,6 +633,12 @@ section{
       height: calc(100vh - 200px);
       margin-left: calc(100 / 1280 *100vw);
       margin-right: calc(100 / 1280 *100vw);
+    }
+
+    //スライドのタイトル
+    &__slide-title {
+      font-size: 40px;
+      padding: 2rem 8rem;
     }
   }
 
@@ -502,9 +670,9 @@ section{
 
 }
 
+//あしらい
 .ashirai{
   display: none;
-
 }
 
 ///////////// webdesign //////////////
@@ -647,8 +815,8 @@ section{
 .banners{
 
   &-item{
-    border: 1px solid rgba(0, 0, 0, 0.18);
-    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: $whiteBase;;
   }
 
   &-image{
@@ -683,7 +851,7 @@ section{
   position: absolute;
   top: 50%;
   background-color: rgba(0, 0, 0, 0.2);
-
+  z-index: 1;
 }
 
 .swiper-button-next::after,
@@ -916,6 +1084,7 @@ section{
 /* -------------------------------------------- */
 /* i can do */
 /* -------------------------------------------- */
+
 .can{
   &-heading{
     text-align: right;
@@ -929,6 +1098,8 @@ section{
     text-align: center;
     font-weight: bold;
     font-size: rem(20);
+    background-color: $textColor;
+    color: #ffffff;
 
     &-num{
       font-size: rem(28);
@@ -937,7 +1108,7 @@ section{
   }
 
   &__image-wrap{
-    margin-top: 8px; 
+    margin-top: 16px; 
   }
 
   &__image{
@@ -991,7 +1162,7 @@ section{
 /* contact */
 /* -------------------------------------------- */
 .contact{
-  background: linear-gradient(to bottom, #fafafa 0 30%, rgb(237, 237, 237) 30% 100%);
+  background: linear-gradient(to bottom, $whiteBase 0 30%, rgb(237, 237, 237) 30% 100%);
   padding-bottom: 90px;
   
 
@@ -1037,18 +1208,18 @@ section{
 @media (hover: hover){
   .contact__btn:hover{
     background-color: #121212;
-    color: #fff;
+    color: $whiteBase;
     border: 2px solid #333333;
   }
 
   .contact__btn:hover::after{
-    background: linear-gradient(135deg, transparent 0% 50%, #fff 50% 100%);
+    background: linear-gradient(135deg, transparent 0% 50%, $whiteBase 50% 100%);
   }
 }
 
 @media (min-width: 765px) {
   .contact{
-    background: linear-gradient(to bottom, #fafafa
+    background: linear-gradient(to bottom, $whiteBase
     0 36%, rgb(237, 237, 237) 36% 100%);
     padding-bottom: 90px;
     
