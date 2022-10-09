@@ -103,8 +103,8 @@ $(function(){
 
   // --------------------スクロールでfadeinする動きここから -----------------------
   //スクロールで使う変数
-  var mvHight = $('.mv').outerHeight(true);
-  var pageHeadingHight = $('.page-heading').outerHeight(true);
+  var mvHight = $('.mv').outerHeight(true); //topはmvを超えたら
+  var pageHeadingHight = $('.page-heading').outerHeight(true); //それ以外のページはページタイトルをこえたら
 
   // スクロールで固定されるヘッダー
   $(window).on('scroll', function(){
@@ -139,9 +139,6 @@ $(function(){
 
   //----------------「topへ戻る」関連ここまで ---------------------
 
-  
-
-
   // --------------------フェードインここから ---------------------
   //itemの下からフェードイン
   function fadeUpAnime(){
@@ -163,8 +160,31 @@ $(function(){
 
   // --------------------フェードインここまで ---------------------
 
+  //---------------------記事ページのイメージの表示ここから ---------------
+  $('#pcToggle').click(function(){ 
+    $('.pc-image').slideToggle(400);
+    return false;
+  });
 
- 
+  $('#spToggle').click(function(){ 
+    $('.sp-image').slideToggle(400);
+    return false;
+  });
+  //---------------------記事ページのイメージの表示ここまで---------------
+
+  //-------------------- 記事ページの固定ページネーションここから -----------------
+  var pagination = $('#single-point').offset().top;
+  $(window).scroll(function(){
+    // alert(pagination)
+    if($(this).scrollTop()>pagination){
+      $('#paginationFade').fadeOut(400);
+    }
+    else{
+      $('#paginationFade').fadeIn(400);
+    }
+  });
+   //-------------------- 記事ページの固定ページネーションここまで -----------------
+
 
 
 });
