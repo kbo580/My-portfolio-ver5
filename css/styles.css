@@ -1782,29 +1782,7 @@ body.active {
 /* profile */
 /* -------------------------------------------- */
 /* スキル */
-.bg {
-  background-color: #ddd;
-  width: 136px;
-  height: 136px;
-  border-radius: 50%;
-  margin: 0 auto;
-  position: relative;
-  overflow: hidden;
-}
-.bg::before {
-  content: "";
-  background: url(../images/icon/html&css-icon.png) center/cover;
-  width: 70%;
-  height: 70%;
-  display: block;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-}
-
-.w {
+.skills-wrap {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1813,20 +1791,74 @@ body.active {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  margin-top: -40px;
 }
-.w ul {
-  width: calc((100% - 180px) / 4);
-  border: 1px solid #000;
+.skills-list {
+  width: 100%;
+  margin-top: 40px;
 }
-
-.skills-list__name {
-  font-weight: bold;
+.skills-list__cont {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+}
+.skills-list__title {
+  font-weight: bold;
+  text-align: center;
+}
+.skills-list__image-wrap {
+  background-color: #ddd;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  position: relative;
+}
+.skills-list__image {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+.skills-list__desc {
+  margin-top: 10px;
+  font-size: 0.875rem;
+}
+
+@media (min-width: 765px) {
+  .skills-list {
+    width: calc((100% - 30px) / 2);
+  }
+  .skills-list__cont {
+    display: block;
+  }
+  .skills-list__image-wrap {
+    width: 140px;
+    height: 140px;
+    margin: 0 auto;
+    margin-top: 10px;
+  }
+  .skills-list__image {
+    width: 80px;
+    height: 80px;
+  }
+}
+@media (min-width: 992px) {
+  .skills-list {
+    width: calc((100% - 90px) / 4);
+  }
 }
 /* -------------------------------------------- */
 /*  */
