@@ -13,7 +13,7 @@
   <!-- googlefont -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Montserrat:wght@600&family=Noto+Sans+JP&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Montserrat:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
 
 
   <title></title>
@@ -22,8 +22,8 @@
 <body>
 
     <header class="header">
-        <h1 class="site-title">
-          <a href="#" class="site-link">Yuta Kobayashi’s <br>Portfolio</a>
+        <h1 class="site-title  en-title">
+          <a href="index.html" class="site-link">Yuta Kobayashi’s <br>Portfolio</a>
         </h1>
 
       <div class="burger">
@@ -34,7 +34,7 @@
 
       <!-- sp用nav -->
       <nav class="sp-nav nav">
-        <ul class="sp-nav__list nav__list">
+        <ul class="sp-nav__list nav__list en-title">
   
           <li class="sp-nav__list-item nav__list-item">
             <a href="#" class="sp-nav__link nav__link">home</a>
@@ -65,7 +65,7 @@
   
       <!-- pc用nav -->
       <nav class="pc-nav nav">
-        <ul class="pc-nav__list nav__list">
+        <ul class="pc-nav__list nav__list en-title">
   
           <li class="pc-nav__list-item nav__list-item">
             <a href="#" class="pc-nav__link nav__link">home</a>
@@ -97,135 +97,284 @@
     </header>
 
     <main>
+      <div class="page-heading__wrap">
+        <h2 class="page-heading heading-common en-title">pagetitle</h2>
+      </div>
+
+      <div class="breadcrumbs">
+        <div class="breadcrumb_inner">
+          <span><a href="/">HOME</a></span> >
+          <span><a href="/">ページ名</a></span> >
+          <span>ページ名</span> 
+        </div>
+      </div>
+      <!-- /breadcrumbs -->
+      
       
       <div class="contents inner">
-        <section id="works"  class="works">
-          <h2 class="sec-heading heading-common works__heading">works</h2>
-    
-          <div class="works__body content-body">
+      <section id="works"  class="single">
 
-            <!-- web制作 -->
-            <div class="webdesign__wrap works__cont">
-              <h3 class="sub-heading heading-common">Web制作</h3>
-              <p class="works__desc">実案件や架空案件、練習サイトを掲載しております</p>
+          <!-- サイトの情報 -->
+          <div class="single-info single__wrapper s--inner">
 
-              <ul class="webdesign__item-list">
-    
-                <li class="webdesign__item">
-                  <a href="single-temp.html" class="webdesign__link">
-                    <div class="mask">
-
-                      <div class="webdesign__body">
-                        <h3 class="webdesign__title">タイトルタイトルタイトル</h3>
-                        <p class="webdesign__text">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
-                      </div>
-                      <!-- /webdesign__body -->
-  
-                      <figure class="webdesign__thum">
-                        <img src="images/clinic-top-image.png" alt="サムネ"  class="webdesign__img thum">
-                      </figure>
-      
-                    </div>
-                    <!-- /mask -->
-                  </a>
-                </li>
-
-                <li class="webdesign__item">
-                  <a href="single-temp.html" class="webdesign__link">
-                    <div class="mask">
-                      <div class="webdesign__body">
-                        <h3 class="webdesign__title">タイトルタイトルタイトル</h3>
-                        <p class="webdesign__text">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
-                      </div>
-  
-                      <figure class="webdesign__thum">
-                        <img src="images/huvest-top-image.png" alt="サムネ"  class="webdesign__img thum">
-                      </figure>
-      
-                    </div>
-                    <!-- /mask -->
-                  </a>
-                </li>
-    
-                <li class="webdesign__item">
-                  <a href="#" class="webdesign__link">
-                    <div class="mask">
-                      <div class="webdesign__body">
-                        <h3 class="webdesign__title">タイトルタイトルタイトル</h3>
-                        <p class="webdesign__text">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
-                      </div>
-
-                      <figure class="webdesign__thum">
-                        <img src="images/blog-image.png" alt="サムネ"  class="webdesign__img thum">
-                      </figure>
-      
-                    </div>
-                    <!-- /mask -->
-                  </a>
-                </li>
-    
-                <li class="webdesign__item">
-                  <a href="#" class="webdesign__link">
-                    <div class="mask">
-                      <div class="webdesign__body">
-                        <h3 class="webdesign__title">タイトルタイトルタイトル</h3>
-                        <p class="webdesign__text">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
-                      </div>
-
-                      <figure class="webdesign__thum">
-                        <img src="images/service-webdesign-kojin.png" alt="サムネ"  class="webdesign__img thum">
-                      </figure>
-      
-                    </div>
-                    <!-- /mask -->
-                  </a>
-                </li>
-    
-                <li class="webdesign__item">
-                  <a href="#" class="webdesign__link">
-                    <div class="mask">
-                      <div class="webdesign__body">
-                        <h3 class="webdesign__title">タイトルタイトルタイトル</h3>
-                        <p class="webdesign__text">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
-                      </div>
-
-                      <figure class="webdesign__thum">
-                        <img src="images/service-webdesign-ec.png" alt="サムネ"  class="webdesign__img thum">
-                      </figure>
-      
-                    </div>
-                    <!-- /mask -->
-                  </a>
-                </li>
-    
-                <li class="webdesign__item">
-                  
-                  <a href="#" class="webdesign__link">
-                    <div class="mask">
-                      <div class="webdesign__body">
-                        <h3 class="webdesign__title">タイトルタイトルタイトル</h3>
-                        <p class="webdesign__text">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
-                      </div>
-
-                      <figure class="webdesign__thum">
-                        <img src="images/service-webdesign-lp.png" alt="サムネ"  class="webdesign__img thum">
-                      </figure>
-                    </div>
-                    <!-- /mask -->
-                  </a>
-                </li>
-    
-              </ul>
-      
-              <div class="btn-wrap">
-                <a href="#" class="btn btn--more">More View</a>
+            <div class="single-info__thum-wrap">
+              <!-- サムネイル -->
+              <div class="single-info__thum">
+                <img src="images/人材派遣のヒューベストpc-screen .png" alt=""  loading="lazy">
               </div>
+              <!-- /サムネイル -->
+  
+              <div class="scrolldown"><span>Scroll</span></div>
+            </div>
+            <!-- /single-info__thum-wrap -->
+
+            <div class="single-info__explain">猫を飼い始めることになったら、まず何が必要なのでしょうか？ 必ず必要になるグッズと、あると便利な猫グッズを紹介します。 猫はこれからの10数年、ともに生きていく家族の一員です。</div>
+
+            <div class="single-info__body">
+              
+              <dl class="single-info__list single__list">
+                <dt class="single-info__list-title single__list-title">制作期間</dt>
+                <dd class="single-info__list-desc single__list-desc">約三週間</dd>
+              </dl>
+  
+              <dl class="single-info__list single__list">
+                <dt class="single-info__list-title single__list-title">サイト構成</dt>
+                <dd class="single-info__list-desc single__list-desc">Topページのみ</dd>
+              </dl>
+  
+              <dl class="single-info__list single__list">
+                <dt class="single-info__list-title single__list-title">使用言語やツールなど</dt>
+                <dd class="single-info__list-desc single__list-desc">Adobe XD / HTML / CSS(SCSS) / jQuery /Photo Shop(バナー作成)</dd>
+              </dl>
+
+              <p class="ashirai single-info__ashirai en-title">infomation</p>
 
             </div>
-            <!-- /web制作 works__cont -->
+            <!-- /single-list__wrap -->
+
+            <div class="square__btn-wrap">
+              <a href="" class="square__btn --single" target="_blank" >サイトへ<i class="fa-solid fa-up-right-from-square"></i></a>
+            </div>
+            
+            <p  class="single-info__attention">※BASIC認証をかけてあります。<br>お手数ですがid”<span class="fwb">portfolio</span>”, パスワード”<span class="fwb">kcreate</span>”を入力してご覧ください</p>     
 
           </div>
-          <!-- /works__body -->
+          <!-- /single-info -->
+
+          <!-- サイトの詳細 -->
+          <div class="single-detail single__wrapper s--inner">
+            <div class="sub-heading__wrapper">
+              <h3 class="sub-heading single-sub-heading">サイトの詳細</h3>
+              <!-- <p class="heading-common en-text sub-heading-en">details</p> -->
+            </div>
+  
+            <ul class="single-detail__list">
+              <li class="single-detail__item single__list">
+                <p class="single-detail__list-title single__list-title">サイト制作の概要</p>
+  
+                <ul class="single-detail__desc-wrap single__list-desc"> 
+                  <li class="single-detail__desc">既卒者、転職者向けの人材派遣会社のWebサイト</li>
+                </ul>
+              </li>
+  
+              <li class="single-detail__item single__list">
+                <p class="single-detail__list-title single__list-title">ターゲットの基本情報</p>
+  
+                <ul class="single-detail__desc-wrapper  single__list-desc"> 
+                  <li class="single-detail__desc --list">20代から30代を軸とした既卒者、転職者</li>
+                  <li class="single-detail__desc --list">20代から30代を軸とした既卒者、転職者</li>
+                  <li class="single-detail__desc --list">20代から30代を軸とした既卒者、転職者</li>
+                </ul>
+              </li>
+  
+              <li class="single-detail__item single__list">
+                <p class="single-detail__list-title single__list-title">ゴール</p>
+  
+                <ul class="single-detail__desc-wrap  single__list-desc"> 
+                  <li class="single-detail__desc">Webサイトを通じて登録者を増やす</li>
+                </ul>
+              </li>
+  
+              <li class="single-detail__item single__list">
+                <p class="single-detail__list-title single__list-title">ゴールまでのポイント</p>
+  
+                <ul class="single-detail__desc-wrap  single__list-desc"> 
+                  <li class="single-detail__desc --list">Webサイトを通じて登録者を増やす</li>
+                  <li class="single-detail__desc --list">製作実績をTopページに配置することでどのようなことができるかアピールする</li>
+                  <li class="single-detail__desc --list">20代から30代を軸とした既卒者、転職者</li>
+                </ul>
+              </li>
+
+              <li class="ashirai single-info__ashirai en-title">details</li>
+  
+            </ul>
+            <!-- /single-detail__list -->
+
+            <div class="single-detail__image-wrapper">
+
+              <div class="pc-image-wrapper">
+                <div class="toggle-btn" id="pcToggle"><i class="fas fa-desktop"></i>PCでのTopページ</div>
+                <p class="click-open">※クリックで開閉できます</p>
+                <div class="pc-image">
+                  <img src="images/人材派遣のヒューベストpc-screen .png" alt="">
+                </div>
+              </div>
+              <!-- /pc-image-wrapper -->
+    
+              <div class="sp-image-wrapper">
+                <div class="toggle-btn" id="spToggle"><i class="fas fa-mobile-alt"></i>SPでのTopページ</div>
+                <p class="click-open">※クリックで開閉できます</p>
+  
+                <div class="sp-image">
+                  <img src="images/人材派遣のヒューベス-sp-screen .png" alt="">
+                </div>
+              </div>
+              <!-- /sp-image-wrapper -->
+  
+            </div>
+            <!-- /single__site-image-wrapper -->
+
+            <!-- <p class="ashirai single-info__ashirai en-title">details</p> -->
+              
+          </div>
+          <!-- /サイトの詳細 single__detail -->
+
+          <!-- 制作のポイント -->
+          <div id="single-point" class="single-point single__wrapper s--inner">
+            <div class="sub-heading__wrapper">
+              <h3 class="sub-heading single-sub-heading">制作のポイント</h3>
+              <!-- <p class="heading-common en-text sub-heading-en">points</p> -->
+            </div>
+            
+            <p class="ashirai single-point__ashirai en-title">points</p>
+
+            <div class="swiper-area">
+    
+              <div class="pointSwiper swiper">
+                <div class="swiper-pagination pointSwiper__pagination"></div>
+                <div class="swiper-button-prev pointSwiper__button --left">前の<br>ポイント</div>
+                <div class="swiper-button-next pointSwiper__button --right">次の<br>ポイント</div>
+  
+                <div class="swiper-wrapper">
+                  
+                  <div class="swiper-slide pointSwiper__swiper-slide">
+                    <div class="single-point__wrap">
+            
+                      <p class="single-point__page-title single__list-title">Topページ</p>
+          
+                      <div class="single-point__cont">
+                        <div class="single-point__image">
+                          <img src="images/huvest-top-image.png" alt="" loading="lazy">
+                        </div>
+          
+                        <div class="single-point__list">
+                          <div class="single-point__item">
+                            <p class="single-point__heading">header</p>
+                            <p class="single-point__desc">猫を飼い始めることになったら、まず何が必要なのでしょうか？ 必ず必要になるグッズと、あると便利な猫グッズを紹介します。 </p>
+                          </div>
+                          <!-- /single-point__item -->
+          
+                          <div class="single-point__item">
+                            <p class="single-point__heading">header</p>
+                            <p class="single-point__desc">猫を飼い始めることになったら、まず何が必要なのでしょうか？ 必ず必要になるグッズと、あると便利な猫グッズを紹介します。 </p>
+                          </div>
+                          <!-- /single-point__item -->
+          
+                          <div class="single-point__item">
+                            <p class="single-point__heading">header</p>
+                            <p class="single-point__desc">猫を飼い始めることになったら、まず何が必要なのでしょうか？ 必ず必要になるグッズと、あると便利な猫グッズを紹介します。 </p>
+                          </div>
+                          <!-- /single-point__item -->
+          
+                          <div class="single-point__item">
+                            <p class="single-point__heading">header</p>
+                            <p class="single-point__desc">猫を飼い始めることになったら、まず何が必要なのでしょうか？ 必ず必要になるグッズと、あると便利な猫グッズを紹介します。 </p>
+                          </div>
+                          <!-- /single-point__item -->
+                        </div>
+                        <!-- /single-point__list -->
+                        
+                      </div>
+                      <!-- /single-point__cont -->
+                    </div>
+                    <!-- /single-point__wrapper -->
+  
+                  </div>
+                  <!-- /swiper-slide -->
+      
+  
+                  <div class="swiper-slide">
+  
+                    <div class="single-point__wrap">
+                      <p class="single-point__place">worksページ</p>
+          
+                      <div class="single-point__flex">
+                        <div class="single-point__image">
+                          <img src="images/clinic-top.png" alt="" loading="lazy">
+                        </div>
+          
+                        <div class="single-point__list">
+                          <div class="single-point__item">
+                            <p class="single-point__heading">header</p>
+                            <p class="single-point__desc">猫を飼い始めることになったら、まず何が必要なのでしょうか？ 必ず必要になるグッズと、あると便利な猫グッズを紹介します。 </p>
+                          </div>
+                          <!-- /single-point__item -->
+          
+                          <div class="single-point__item">
+                            <p class="single-point__heading">header</p>
+                            <p class="single-point__desc">猫を飼い始めることになったら、まず何が必要なのでしょうか？ 必ず必要になるグッズと、あると便利な猫グッズを紹介します。 </p>
+                          </div>
+                          <!-- /single-point__item -->
+          
+                          <div class="single-point__item">
+                            <p class="single-point__heading">header</p>
+                            <p class="single-point__desc">猫を飼い始めることになったら、まず何が必要なのでしょうか？ 必ず必要になるグッズと、あると便利な猫グッズを紹介します。 </p>
+                          </div>
+                          <!-- /single-point__item -->
+                        </div>
+                        <!-- /single-point__list -->
+                      </div>
+                      <!-- /single-point__cont -->
+                    </div>
+                    <!-- /single-point__wrapper -->
+                    
+                  </div>
+                  <!-- /swiper-slide -->
+    
+                </div>
+                <!-- /swiper-wrapper -->
+      
+              </div>
+              <!-- /swiper -->
+              
+            </div>
+            <!-- /swiper-area -->    
+  
+          </div>
+          <!-- /制作のポイント single-point -->
+
+          <!-- 固定ページネーション -->
+          <div class="fixed-pagination-btn__wrapper" id="paginationFade">
+            <div class="fixed-pagination-btn --left">
+              <a href="">
+                <img src="images/arrow-left.svg" alt="前の記事へ">
+              </a>
+            </div>
+  
+            <div class="fixed-pagination-btn --right">
+              <a href="">
+                <img src="images/arrow-right.svg" alt="次の記事へ">
+              </a>
+            </div>
+          </div>
+          <!-- /固定ページネーション fixed-pagination-btn__wrapper -->
+
+          <ul class="pagination">
+            <li class="prev"><a href="" class="">PREV</a></li>
+            <li class="to-works"><a href="" class=""><i class="fa-solid fa-table-cells-large"></i> WORKS</a></li>
+            <li class="next"><a href="" class="">NEXT</a></li>
+          </ul>
+          
     
         </section>
         <!-- /works -->
@@ -236,7 +385,7 @@
     </main>
 
   <footer class="footer">
-    <p class="footer__copy">©2022 Yuta Kobayashi</p>
+    <p class="footer__copy en-title">©2022 Yuta Kobayashi</p>
 
     <!-- Topへ戻るボタン -->
     <div id="top" class="top"></div>
