@@ -81,7 +81,6 @@ header,main,section,footer, div, ul, li, h1,h2,h3,dl,dt,dd{
 
 .contents{
   // border: 1px solid #000;
-  margin-top: 100px;
   margin-top: 70px;
   margin-bottom: 80px;
 }
@@ -350,6 +349,59 @@ header,main,section,footer, div, ul, li, h1,h2,h3,dl,dt,dd{
   }
 
 
+}
+
+//制作物の共通部分
+//(topのweb制作, worksアーカイブページ, bannersアーカイブページ)
+.works{
+
+  // リスト
+  &__list{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    position: relative;
+  }
+
+  // リストアイテム
+  &__item{
+    width: calc((100% - 20px) / 2);
+    box-shadow: 4px 4px  6px rgba(0, 0, 0, 0.16);
+    border-radius: 6px;
+    position: relative;
+    margin-top: 20px;
+  }
+
+  &__link{
+    display: block;
+    width: 100%;
+  }
+}
+
+@media (min-width: 765px){
+  //制作物の共通部分
+  //(topのweb制作, worksアーカイブページ, bannersアーカイブページ)
+  .works{
+
+    // リスト
+    &__list{
+  
+      //justify-content: space-between対策
+      &::after{
+        content: "";
+        height: 100%;
+        display: block;
+        width: calc((100% - 60px) / 3);
+      }
+    }
+  
+    // リストアイテム
+    &__item{
+      width: calc((100% - 60px) / 3);
+      margin-top: 30px;
+    }
+  }
 }
 
 
@@ -789,32 +841,6 @@ body.active{
   &__wrap{
     margin-top: -20px;
   }
-  
-  // webdesignのリスト 
-  &__item-list{
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    position: relative;
-    
-    //justify-content: space-between対策
-    &::before{
-      content: "";
-      width: 100%;
-      height: 100%;
-      display: block;
-    }
-  }
-  
-  // リストアイテム
-  &__item{
-    width: calc((100% - 20px) / 2);
-    box-shadow: 4px 4px  6px rgba(0, 0, 0, 0.16);
-    border-radius: 6px;
-    position: relative;
-    margin-top: 20px;
-  }
 
   &__link{
     display: block;
@@ -879,6 +905,7 @@ body.active{
     width: 100%;
     margin-top: 20px;
     font-size: rem(12);
+    display: none;
   }
 }
 
@@ -1020,8 +1047,12 @@ body.active{
 
     // リストアイテム
     &__item{
-      width: calc((100% - 60px) / 3);
-      margin-top: 30px;
+      // width: calc((100% - 60px) / 3);
+      // margin-top: 30px;
+    }
+
+    &__text{
+      display: block;
     }
 
     //あしらい
@@ -1991,13 +2022,91 @@ body.active{
 /* -------------------------------------------- */
 /* profile */
 /* -------------------------------------------- */
-/* スキル */
+//--------------------  共通設定 ------------------
+.prof__wrap{
+  // border: 3px solid #000;
+  position: relative;
+  padding-bottom: 80px;
+}
+
+.prof__heading{
+  color: #E6E5EF;
+  position: absolute;
+  font-size: rem(40);
+  font-size: min(max(40px, calc(2.5rem + ((1vw - 3.75px) * 8.8398))), 120px);
+  bottom: 5%;
+  right: 0;
+  z-index: -1;
+}
+
+.posi-left{
+  left: 0;
+}
+
+
+.prof-sec{
+  padding: 50px 0;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  // background: linear-gradient(to bottom, #C2E9FB, #A1C4FD);
+}
+
+// .prof-sec-first{
+//   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 90%);
+//   padding-bottom: 150px;
+//   margin-bottom: -140px;
+// }
+
+article{
+  // border: 1px solid #000;
+}
+
+//---------------------about-me------------------
+.about-me{
+  margin-top: 0; //上の余白打ち消し
+
+  &__wrap{
+
+  }
+  
+  &__list{
+    width: 100%;
+    max-width: 600px;
+  }
+
+  // 名前
+  &__title{
+    font-weight: bold;
+    font-size: rem(20);
+  }
+
+  // リストの箇条書き
+  &__item{
+    margin-top: 20px;
+  }
+
+  //箇条書きの先頭に点
+  &__item{
+    &:last-child li{
+      &::before{
+        content: "・";
+      }
+    }
+  }
+}
+
+//------------------ スキル ------------------
 .skills{
-  &-wrap{
+  &__cont{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     margin-top: -40px;
+    // padding-bottom: 100px;
+  }
+  
+  &-wrap{
+    // margin-bottom: 100px;
+    // padding-bottom: 1200px;
   }
 
   //リスト
@@ -2047,6 +2156,26 @@ body.active{
 }
 
 @media (min-width: 765px) {
+  //--------------------  共通設定 ------------------
+.prof__wrap{
+  padding-bottom: 80px;
+}
+
+.prof__heading{
+  // font-size: 120px;
+  bottom: 0%;
+}
+
+  //---------------------about-me------------------
+  .about-me{
+
+    // 名前
+    &__title{
+      font-size: rem(24);
+    }
+  }
+
+  //------------------ スキル ------------------
   .skills{
   
     //リスト
@@ -2087,10 +2216,231 @@ body.active{
 /* -------------------------------------------- */
 /*  */
 /* -------------------------------------------- */
+.contact{
+  &__wrapper{
+    max-width: 600px;
+  }
+}
+
+.form-parts{
+  // border: 1px solid #000;
+  margin-top: 40px;
+
+  &__label{
+    display: flex;
+    align-items: center;
+  }
+
+  &__body{
+    width: 100%;
+    font-size: rem(14);
+    padding: 1em 20px;
+    display: inline-block;
+    border-radius: 6px;
+    // outline: solid 1px red;
+    border: 1px solid #707070;
+    margin-top: 10px;
+
+    &:focus{
+      background-color: #efefef;
+    }
+  }
+}
+
+.label-body{
+  color: #fff;
+  border-radius: 6px;
+  font-size: rem(12);
+  padding: 0.5em 1em;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.must{
+  background-color: #F58694;
+}
+
+.free{
+  background-color: #7FBFFF;
+}
+
+.label-title{
+
+}
+
+.name-cont{
+  display: flex;
+  margin-top: 10px;
+}
+
+.name-wrap{
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+  .form-parts__body{
+    margin-top: 0;
+  }
+}
+
+.textarea{
+  width: 100%;
+  height: 200px;
+}
+
+//承諾確認
+.acceptance{
+  margin-top: 40px;
+  appearance: auto;
+}
+
+.form-btn{
+  display: block;
+  width: 100%;
+  cursor: pointer;
+}
+
+/* contact form7用 */ 
+/* エラーメッセージを見やすくする */
+span.wpcf7-not-valid-tip {
+  padding-top: 0.5em;
+
+  &::before{
+    content: "※";
+  }
+}
+
+.wpcf7 form .wpcf7-response-output{
+  color: #DD3232;
+  font-weight: bold;
+  margin: 0;
+  border: none;
+}
+
+.wpcf7-spinner{
+  display: none;
+}
+@media (min-width: 765px) {
+
+
+}
+
+/* -------------------------------------------- */
+/* バナーアーカイブ */
+/* -------------------------------------------- */
+.banners{
+
+  &__image{
+    aspect-ratio: 6 / 5;
+    object-fit: contain;
+  }
+}
+
+
+/*モーダル*/
+.modal-wrapper{
+  background-color: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+
+/* 閉じるボタン */
+.close{
+  background-color: #ddd;
+  position: absolute;
+  top: 10%;
+  right: 10%;
+  z-index: 1;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.close::before,
+.close::after{
+  position: absolute;
+  content: "";
+  border-top: 3px solid #333;
+  width: 20px;
+  top: 50%;
+  left: 50%;
+}
+
+.close::before{
+  transform: translate(-50%, -50%) rotate(
+45deg);
+}
+
+.close::after{
+  transform: translate(-50%, -50%) rotate(
+-45deg);
+}
+
+.modal-image-wrapper{
+  width: 70%;
+}
+
+/*モーダルの中の画像*/
+.modal-image-wrapper img{
+  max-width: 70%;
+  max-height: 70%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: auto;
+  object-fit: cover;
+  border: 3px solid rgba(255, 255, 255, 0.1);
+}
+
 
 @media (min-width: 765px) {
 
 
 }
 
+//hover時の動き
+@media (hover: hover){
+  .banners{
+    &__image-wrap{
+      transition: opacity .4s;
+      &:hover{
+        opacity: .6;
+      }
+    }
+  
+    &__image{
+      aspect-ratio: 6 / 5;
+      object-fit: contain;
+    }
+  }
+}
 
+
+/* -------------------------------------------- */
+/*  */
+/* -------------------------------------------- */
+
+@media (min-width: 765px) {
+
+
+}
+
+.bg_pattern {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #ffffff;
+  opacity: 0.4;
+  z-index: -1;
+}
+.Polka {
+  background-image: radial-gradient(#ffc107 2px, #ffffff 2px);
+  background-size: 20px 20px;
+}
