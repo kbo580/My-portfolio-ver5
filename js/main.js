@@ -173,18 +173,42 @@ $(function(){
   //---------------------記事ページのイメージの表示ここまで---------------
 
   //-------------------- 記事ページの固定ページネーションここから -----------------
-  var pagination = $('#single-point').offset().top;
-  $(window).scroll(function(){
-    // alert(pagination)
-    if($(this).scrollTop()>pagination){
-      $('#paginationFade').fadeOut(400);
-    }
-    else{
-      $('#paginationFade').fadeIn(400);
-    }
-  });
+  if($("#single-point").length){
+    var pagination = $('#single-point').offset().top;
+    $(window).scroll(function(){
+      if($(this).scrollTop()>pagination){
+        $('#paginationFade').fadeOut(400);
+      }
+      else{
+        $('#paginationFade').fadeIn(400);
+      }
+    });
+  }
    //-------------------- 記事ページの固定ページネーションここまで -----------------
 
+  //------------- バナー一覧のモーダル ------------------
+  $('#modal-wrapper').hide();
+
+  $('.banners__item > a').on('click', function(){
+    var src = $(this).find('img').attr('src');
+    var alt = $(this).find('img').attr('alt');
+    $('#modal-image-wrapper > img').attr('src', src).attr('alt', alt);
+    $('#modal-wrapper').fadeIn(600);
+    $('body').addClass('fixed');
+    // window.addEventListener( 'touchmove' , movefun , { passive: false } );
+    return false;
+  });
+
+
+$('window').click(function(){ 
+  alert("hi")
+  });
+
+  $('#modal-wrapper').on('click', function(){
+    $('#modal-wrapper').fadeOut(600); 
+    $('body').removeClass('fixed');
+    // window.removeEventListener( 'touchmove' , movefun, { passive: false }   );
+  });
 
 
 });
