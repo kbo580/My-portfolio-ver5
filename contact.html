@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/styles.scss">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.1/css/all.css">
+
+  <!-- googlefont -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Montserrat:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+
+
+  <title></title>
+</head>
+
+<body>
+
+    <header class="header">
+        <h1 class="site-title  en-title">
+          <a href="index.html" class="site-link">Yuta Kobayashi’s <br>Portfolio</a>
+        </h1>
+
+      <div class="burger">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+
+      <!-- sp用nav -->
+      <nav class="sp-nav nav">
+        <ul class="sp-nav__list nav__list en-title">
+  
+          <li class="sp-nav__list-item nav__list-item">
+            <a href="#" class="sp-nav__link nav__link">home</a>
+          </li>
+  
+          <li class="sp-nav__list-item nav__list-item">
+            <a href="#works" class="sp-nav__link nav__link">works</a>
+          </li>
+  
+          <li class="sp-nav__list-item nav__list-item">
+            <a href="#about" class="sp-nav__link nav__link">about</a>
+          </li>
+  
+          <li class="sp-nav__list-item nav__list-item">
+            <a href="#can" class="sp-nav__link nav__link">i can do</a>
+          </li>
+          <li class="sp-nav__list-item nav__list-item">
+            <a href="#contact" class="sp-nav__link nav__link">contact</a>
+          </li>
+  
+          <li class="sp-nav__list-item nav__list-item">
+            <a href="#" class="sp-nav__link nav__link">blog<i class="fa-solid fa-up-right-from-square"></i></a>
+          </li>
+          
+        </ul>
+      </nav>
+      <!-- /sp用nav -->
+  
+      <!-- pc用nav -->
+      <nav class="pc-nav nav">
+        <ul class="pc-nav__list nav__list en-title">
+  
+          <li class="pc-nav__list-item nav__list-item">
+            <a href="#" class="pc-nav__link nav__link">home</a>
+          </li>
+  
+          <li class="pc-nav__list-item nav__list-item">
+            <a href="#works" class="pc-nav__link nav__link">works</a>
+          </li>
+  
+          <li class="pc-nav__list-item nav__list-item">
+            <a href="#about" class="pc-nav__link nav__link">about</a>
+          </li>
+  
+          <li class="pc-nav__list-item nav__list-item">
+            <a href="#can" class="pc-nav__link nav__link">i can do</a>
+          </li>
+          <li class="pc-nav__list-item nav__list-item">
+            <a href="#contact" class="pc-nav__link nav__link">contact</a>
+          </li>
+  
+          <li class="pc-nav__list-item nav__list-item">
+            <a href="#" class="pc-nav__link nav__link">blog<i class="fa-solid fa-up-right-from-square"></i></a>
+          </li>
+          
+        </ul>
+      </nav>
+      <!-- /pc用nav -->
+
+    </header>
+
+    <main>
+      <div class="page-heading__wrap">
+        <h2 class="page-heading heading-common en-title">contact</h2>
+      </div>
+
+      <div class="breadcrumbs">
+        <div class="breadcrumb_inner">
+          <span><a href="/">HOME</a></span> >
+          <span><a href="/">ページ名</a></span> >
+          <span>ページ名</span> 
+        </div>
+      </div>
+      <!-- /breadcrumbs -->
+      
+      
+      <div class="contents inner">
+        <section class="contact-page">
+          <div class="contact__wrapper inner padding-container">
+            <p class="contact__text">お忙しい中ご覧いただきありがとうございます。<br>お仕事の話はもちろん、サイトの感想など何でもお聞かせください。</p>
+    
+            <form action="#">
+    
+              <div class="form-parts">
+                <div class="form-parts__label">
+                  <span class="label-body must">必須</span>
+                  <label for="office-name" class="label-title">会社名</label>
+                </div>
+                <!-- /parts__label -->
+    
+                <input type="text" id="office-name" placeholder="例）ABCデザイン" class="form-parts__body"> 
+              </div>
+              <!-- /form-parts -->
+    
+              <!-- 名前 -->
+              <div class="form-parts">
+                <div class="form-parts__label">
+                  <span class="label-body must">必須</span>
+                  <!-- <label for="name" class="label-title">お名前</label> -->
+                  お名前
+                </div>
+                <!-- /parts__label -->
+
+                <div class="name-cont">
+                  <div class="name-wrap">
+                    <label for="fname">姓：</label>
+                    <input type="text" id="fname" placeholder="例）山田" class="form-parts__body">
+                  </div>
+
+                  <div class="name-wrap">
+                    <label for="lname">名：</label>
+                    <input type="text" id="lname" placeholder="例）太郎" class="form-parts__body">
+                  </div>
+  
+                </div>
+
+                <!-- <input type="text" id="name" placeholder="例）山田　太郎" class="form-parts__body">  -->
+              </div>
+              <!-- /名前 form-parts -->
+    
+              <div class="form-parts">
+                <div class="form-parts__label">
+                  <span class="label-body free">任意</span>
+                  <label for="mail" class="label-title">メールアドレス</label>
+                </div>
+                <!-- /parts__label -->
+    
+                <input type="email" id="mail" placeholder="例）abc@mail.com" class="form-parts__body"> 
+              </div>
+              <!-- /form-parts -->
+    
+              <div class="form-parts">
+                <div class="form-parts__label">
+                  <span class="label-body free">任意</span>
+                  <label for="title" class="label-title">件名</label>
+                </div>
+                <!-- /parts__label -->
+    
+                <input type="text" id="title" placeholder="例）ABCデザイン" class="form-parts__body"> 
+              </div>
+              <!-- /form-parts -->
+    
+              <div class="form-parts">
+                <div class="form-parts__label">
+                  <span class="label-body must">必須</span>
+                  <label for="question" class="label-title">お問い合わせ内容</label>
+                </div>
+                <!-- /parts__label -->
+    
+                <textarea name="" id="question" placeholder="ご自由にお書きください" class="form-parts__body textarea"></textarea>
+              </div>
+              <!-- /form-parts -->
+    
+              <div class="acceptance">
+                <p>入力内容にお間違いなければチェックを入れてください</p>
+              </div>
+    
+              <div class="square__btn-wrap">
+                <button class="form-btn square__btn">送信</button>
+              </div>
+            </form>
+          </div>
+          <!-- /contact__wrapper -->
+          
+          
+    
+        </section>
+        <!-- /works -->
+  
+      </div>
+      <!-- /inner -->
+  
+    </main>
+
+  <footer class="footer">
+    <p class="footer__copy en-title">©2022 Yuta Kobayashi</p>
+
+    <!-- Topへ戻るボタン -->
+    <div id="top" class="top"></div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <script src="js/swiper.js"></script>    
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
