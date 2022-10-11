@@ -9,9 +9,17 @@
   @return ($px/16) *1rem;
 }
 
-// $mainColor: ;
+$mainColor: #129490;
+$mainColor: #818AA3;
+$mainColor: #2C2C54;
+
 $textColor: #333333;
-$accsentColor: #fc2;
+
+$accsentColor: #FFD54D;
+$accsentColor: #065143;
+$accsentColor: #26413C;
+$accsentColor: #A40E4C;
+
 $whiteBase: #fafafa;
 
 
@@ -73,6 +81,7 @@ header,main,section,footer, div, ul, li, h1,h2,h3,dl,dt,dd{
 /* -------------------------------------------- */
 /* 共通部分 */
 /* -------------------------------------------- */
+//sサイズのinner
 .s--inner{
   margin: 100px auto 0;
   max-width: 900px;
@@ -85,12 +94,14 @@ header,main,section,footer, div, ul, li, h1,h2,h3,dl,dt,dd{
   margin-bottom: 80px;
 }
 
+//見出しの共通設定
 .heading-common{
   letter-spacing: 0.1em;
   line-height: 1;
   text-transform: uppercase;
 }
 
+// セクションの見出し
 .sec-heading{
   font-size: 50px;
   text-align: center;
@@ -98,6 +109,7 @@ header,main,section,footer, div, ul, li, h1,h2,h3,dl,dt,dd{
 
 .sub-heading{
   font-size: rem(24);
+  font-family: "Montserrat";
 }
 
 .can__heading{
@@ -105,6 +117,7 @@ header,main,section,footer, div, ul, li, h1,h2,h3,dl,dt,dd{
   font-weight: bold;
 }
 
+// トップページのセクション
 .topPage-section{
   padding-top: 150px;
 }
@@ -112,7 +125,7 @@ header,main,section,footer, div, ul, li, h1,h2,h3,dl,dt,dd{
 //下層ページの見出し
 .page-heading{
   padding: 60px 0px;
-  background-color: navy;
+  background-color: $mainColor;
   color: #fff;
   text-align: center;
   font-size: rem(40);
@@ -122,25 +135,24 @@ header,main,section,footer, div, ul, li, h1,h2,h3,dl,dt,dd{
   }
 }
 
+// 英字の見出し
 .en-title{
   font-family: "Montserrat";
 }
 
 //ボタン
 .btn{
-  font-weight: bold;
   position: relative;
   padding-right: 50px;
   transition: all .4s;
   font-family: "Montserrat";
-
 
   // 矢印
   &::before,
   &::after{
     content: "";
     position: absolute;
-    height: 2px;
+    height: 1px;
     transition: all 0.3s;
     background: #333;
   }
@@ -172,17 +184,16 @@ header,main,section,footer, div, ul, li, h1,h2,h3,dl,dt,dd{
 
 //四角ボタン
 .square__btn{
-  border: 2px solid #121212;
+  border: 1px solid #121212;
   padding: 20px;
   display: block;
   text-align: center;
   font-size: rem(16);
-  font-weight: bold;
   max-width: 300px;
   margin: 0 auto;
-  font-weight: bold;
   transition: all .6s;
   position: relative;
+  background-color: transparent;
   
   //あしらい
   &::after{
@@ -424,6 +435,7 @@ header,main,section,footer, div, ul, li, h1,h2,h3,dl,dt,dd{
   letter-spacing: 0.1em;
   font-size: rem(18);
   z-index: 2;
+  font-weight: normal;
 }
 
 //サイトタイトル内のリンク
@@ -514,8 +526,6 @@ header,main,section,footer, div, ul, li, h1,h2,h3,dl,dt,dd{
   
   //サイトタイトル
   .site-title{
-    line-height: 1.5;
-    letter-spacing: 0.1em;
     font-size: rem(28);
   
     //スクロールした時の動き
@@ -545,9 +555,13 @@ header,main,section,footer, div, ul, li, h1,h2,h3,dl,dt,dd{
   &__link{
     font-size: rem(16);
     text-transform: uppercase;
-    font-weight: bold;
     transition: opacity .6s;
   }
+}
+
+.nav__blog-wrap{
+  display: flex;
+  align-items: center;
 }
 
 .sp-nav{
@@ -660,8 +674,6 @@ body.active{
     letter-spacing: 0.15em;
     font-size: 33px;
     font-size: min(max(33px, calc(2.0625rem + ((1vw - 3.75px) * 5.1934))), 80px);
-    // padding: 200px 0px;
-    // padding: 300px 0px 200px;
     position: absolute;
     z-index: 2;
     bottom: 0;
@@ -715,7 +727,7 @@ body.active{
   position: absolute;
   width: 100%;
   height: 100%;
-  background-color: #fc2;
+  background-color: $accsentColor;
 }
 
 @keyframes bgLRextendAnime{
@@ -1045,12 +1057,6 @@ body.active{
       margin-top: 0px;
     }
 
-    // リストアイテム
-    &__item{
-      // width: calc((100% - 60px) / 3);
-      // margin-top: 30px;
-    }
-
     &__text{
       display: block;
     }
@@ -1169,7 +1175,7 @@ body.active{
 
   &__heading{
     font-size: rem(20);
-    font-weight: bold;
+    font-weight: normal;
   }
 
   &__list{
@@ -1334,7 +1340,8 @@ body.active{
 /* footer */
 /* -------------------------------------------- */
 .footer{
-  background: #ddd;
+  background: $mainColor;
+  color: #ffffff;
   margin-top: auto;
   height: 70px;
   display: flex;
@@ -1674,7 +1681,7 @@ body.active{
   }
 
   &__list{
-    background-color: #ccc;
+    background-color: #FFFEF8;
     width: 100%;
     margin-top: 40px;
   }
@@ -2024,7 +2031,6 @@ body.active{
 /* -------------------------------------------- */
 //--------------------  共通設定 ------------------
 .prof__wrap{
-  // border: 3px solid #000;
   position: relative;
   padding-bottom: 80px;
 }
@@ -2056,10 +2062,6 @@ body.active{
 //   margin-bottom: -140px;
 // }
 
-article{
-  // border: 1px solid #000;
-}
-
 //---------------------about-me------------------
 .about-me{
   margin-top: 0; //上の余白打ち消し
@@ -2075,7 +2077,6 @@ article{
 
   // 名前
   &__title{
-    font-weight: bold;
     font-size: rem(20);
   }
 
@@ -2101,7 +2102,6 @@ article{
     flex-wrap: wrap;
     justify-content: space-between;
     margin-top: -40px;
-    // padding-bottom: 100px;
   }
   
   &-wrap{
@@ -2124,7 +2124,6 @@ article{
   
     //タイトル
     &__title{
-      font-weight: bold;
       text-align: center;
     }
   
@@ -2428,19 +2427,4 @@ span.wpcf7-not-valid-tip {
 @media (min-width: 765px) {
 
 
-}
-
-.bg_pattern {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: #ffffff;
-  opacity: 0.4;
-  z-index: -1;
-}
-.Polka {
-  background-image: radial-gradient(#ffc107 2px, #ffffff 2px);
-  background-size: 20px 20px;
 }
