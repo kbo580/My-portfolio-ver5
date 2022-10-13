@@ -72,8 +72,15 @@ function bcn_add($bcnObj) {
 }
 add_action('bcn_after_fill', 'bcn_add');
 
+//------------------ 内容の抜粋 ----------------------------
+function custom_excerpt_length( $length ) {
+  return 30;  //数字を変えることで要約の文字数を変えられる
+} 
+add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 
-//---------------------サイトメンテナンス用 --------------------
+
+
+//--------------------- サイトメンテナンス用 --------------------
 function maintenance_mode() {
   if (!current_user_can('edit_themes') || !is_user_logged_in()) {
       wp_die('メンテナンス中です。しばらくお待ちください。');

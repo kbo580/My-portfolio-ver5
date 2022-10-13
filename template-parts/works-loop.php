@@ -15,7 +15,7 @@
 
           <!-- webdesign__thum -->
           <figure class="webdesign__thum">
-            <img src="<?php echo CFS()->get('works_thumb');?>" alt="サムネ"  class="webdesign__img thum">
+            <img src="<?php echo CFS()->get('works_thumb');?>" alt="<?php the_title(); ?>"  class="webdesign__img thum">
           </figure>
           <!-- /webdesign__thum-->
 
