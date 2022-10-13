@@ -184,31 +184,31 @@ header,main,section,footer, div, ul, li, h1,h2,h3,dl,dt,dd{
 
 //四角ボタン
 .square__btn{
-  border: 1px solid #121212;
   padding: 20px;
   display: block;
   text-align: center;
   font-size: rem(16);
-  max-width: 300px;
-  margin: 0 auto;
-  transition: all .6s;
-  position: relative;
   background-color: transparent;
+  border: 1px solid #000;
   
-  //あしらい
-  &::after{
-    content: "";
-    width: 15px;
-    height: 15px;
-    background: linear-gradient(135deg, transparent 0% 50%, #121212 50% 100%);
-    position: absolute;
-    right: 4px;
-    bottom: 4px;
-    transition: all .6s;
-  }
-
   &-wrap{
+    margin: 0 auto;
+    max-width: 300px;
     margin-top: 80px;
+    position: relative;
+    transition: all .4s;
+
+    //あしらい
+    &::after{
+      content: "";
+      width: 15px;
+      height: 15px;
+      background: linear-gradient(135deg, transparent 0% 50%, #121212 50% 100%);
+      position: absolute;
+      right: 4px;
+      bottom: 4px;
+      transition: all .4s;
+    }
   }
 
   //single専用ボタン設定
@@ -226,7 +226,8 @@ header,main,section,footer, div, ul, li, h1,h2,h3,dl,dt,dd{
   aspect-ratio: 3 / 2;
   object-fit: cover;
   width: 100%;
-  height: 100%;
+  height: auto;
+  overflow: hidden;
 }
 
 /* Topへ戻るボタン */
@@ -293,13 +294,18 @@ header,main,section,footer, div, ul, li, h1,h2,h3,dl,dt,dd{
   }
 
   //四角ボタン
-  .square__btn:hover{
+  .square__btn-wrap:hover{
     background-color: #121212;
     color: $whiteBase;
-    border: 2px solid #333333;
+    
+    .form-btn{
+      color: $whiteBase;
+      transition: all .4s;
+    }
   }
+  
 
-  .square__btn:hover::after{
+  .square__btn-wrap:hover::after{
     background: linear-gradient(135deg, transparent 0% 50%, $whiteBase 50% 100%);
   }
 }
@@ -492,6 +498,7 @@ header,main,section,footer, div, ul, li, h1,h2,h3,dl,dt,dd{
   background-color: #333;
   transform: translate(-50%, 0%);
   transition: transform .4s, opacity .4s;
+  transition: all .4s;
 
   &:nth-of-type(1){
     transform:translate(-50%,10px);
@@ -509,10 +516,12 @@ header,main,section,footer, div, ul, li, h1,h2,h3,dl,dt,dd{
 
 .burger.active .bar:nth-of-type(1){
   transform: translateX(-50%) rotate(-45deg);
+  background-color: #ffffff;
 }
 
 .burger.active .bar:nth-of-type(3){
   transform: translateX(-50%) rotate(45deg);
+  background-color: #ffffff;
 }
 
 @media (min-width: 765px) {
@@ -570,18 +579,21 @@ header,main,section,footer, div, ul, li, h1,h2,h3,dl,dt,dd{
   right: -200%;
   width: 100%;
   height: 100vh;
-  background: radial-gradient( #FFF, #000);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: $whiteBase;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform .6s;
   transition: right .6s;
   z-index: 10;
-
+  
   //navにactiveがついた時
   &.active{
     transform: translate(0px);
     right: 0;
+  }
+
+  &__list{
   }
 
   //ナビアイテム
@@ -603,16 +615,16 @@ body.active{
   top: 100px;
   right: 5%;
   z-index: 3;
-  transform: rotate(-90deg);
-  transform-origin: 100% 0%;
   background: transparent;
-
   display: none;
-
+  
   //ナビリスト
   &__list{
+    transform: rotate(-90deg);
+    transform-origin: 100% 0%;
     display: flex;
     flex-direction: row-reverse;
+    // border: 1px solid #000;
   }
 
   //ナビアイテム
@@ -626,16 +638,62 @@ body.active{
   }
 }
 
+// お問い合わせボタンの枠
+.nav__contact-btn-wrap{
+  margin-top: 40px;
+  text-align: center;
+  cursor: pointer;
+  transition: all .4s;
+  
+  //pc
+  &.--pc{
+    position: fixed;
+    right: 3%;
+    bottom: 150px;
+    display: none;
+  }
+
+  // お問い合わせボタン
+  .nav__contact-btn{
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    background: $whiteBase;
+    box-shadow: 2px 2px 0px #e3e5ea;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+
 //ナビアイテムhover時の動き
 @media (hover: hover){
   .nav__link:hover{
     opacity: .6;
   }
+  
+  .nav__contact-btn-wrap{
+    &:hover{
+      opacity: .6;
+    }
+  }
+
 }
 
 @media (min-width: 765px) {
   .sp-nav{
     display: none;
+  }
+
+  // お問い合わせボタンの枠
+  .nav__contact-btn-wrap{
+    
+    //pc
+    &.--pc{
+      display: block;
+    }
   }
 
   .pc-nav{
@@ -663,16 +721,18 @@ body.active{
     right: 0;
     transform: translateY(-50%);
     font-size: 32px;
+    letter-spacing: 0.1em;
     padding: 1rem 2rem;
     z-index: 1;
     color: $textColor;
-    background-color: $whiteBase;
+    background-color: rgba($whiteBase, 0.8);
+    text-align: center;
   }
 
+  //Yuta Kobayashi's portfolio
   &__site-title{
-    color: #fff;
+    color: $textColor;
     letter-spacing: 0.15em;
-    font-size: 33px;
     font-size: min(max(33px, calc(2.0625rem + ((1vw - 3.75px) * 5.1934))), 80px);
     position: absolute;
     z-index: 2;
@@ -681,6 +741,7 @@ body.active{
   }
 }
 
+//伸びるやつ
 .bgextend{
 	animation-name:bgextendAnimeBase;
 	animation-duration:1s;
@@ -810,6 +871,7 @@ body.active{
     &__slide-title {
       font-size: 40px;
       padding: 2rem 8rem;
+      min-width: 500px;
     }
   }
 
@@ -1108,8 +1170,21 @@ body.active{
 /* about */
 /* -------------------------------------------- */
 .about{
+  position: relative;
   &-heading{
     text-align: left;
+  }
+
+  &::before{
+    content: "";
+    width: 110%;
+    background: #efefef;
+    height: 80%;
+    display: block;
+    position: absolute;
+    top: 246px;
+    z-index: -1;
+    margin-left: calc(50% - 50vw);
   }
 }
 
@@ -1230,9 +1305,14 @@ body.active{
 /* -------------------------------------------- */
 
 .can{
+  
   &-heading{
     text-align: right;
+    &-heading{
+      text-align: left;
+    }
   }
+  
 
   &__list{
     margin-top: 70px;
@@ -1645,11 +1725,9 @@ body.active{
       cursor: pointer;
       color: $textColor;
       background-color: $whiteBase;
-      border: 2px solid $textColor;
+      border: 1px solid $textColor;
       padding: 8px;
       display: inline-block;
-      border-radius: 6px;
-      font-weight: bold;
       margin-bottom: 8px;
       transition: background-color .4s, color .4s;
   
@@ -1842,7 +1920,7 @@ body.active{
     
     //リストの説明
     &__list-desc{
-  
+      flex: 1;
     }
   }
 
@@ -2411,14 +2489,20 @@ span.wpcf7-not-valid-tip {
         opacity: .6;
       }
     }
-  
-    &__image{
-      aspect-ratio: 6 / 5;
-      object-fit: contain;
-    }
   }
 }
 
+
+/* -------------------------------------------- */
+/* アーカイブページ */
+/* -------------------------------------------- */
+#pcImage{
+  display: none;
+}
+@media (min-width: 765px) {
+
+
+}
 
 /* -------------------------------------------- */
 /*  */

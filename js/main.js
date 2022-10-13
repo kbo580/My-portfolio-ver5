@@ -1,4 +1,8 @@
-$(function(){
+jQuery(function($){
+
+
+  
+  $(function(){
    // --------------------メインビジュアルののびるやつここから ---------------------
   function BgFadeAnime(){
     $('.bgLRextendTrigger').each(function(){
@@ -90,14 +94,13 @@ $(function(){
     $(this).toggleClass('active');
     $('.sp-nav').toggleClass('active');
     $('body').toggleClass('active');
-    // $('.sp-nav').fadeToggle();
   });
   
-  // $('.gnav--sp__link').on('click', function () {
-  //   $('.burger').removeClass('active');
-  //   $('.nav').removeClass('active');
-  //   $('body').removeClass('active');
-  // });
+  $('.sp-nav a').on('click', function () {
+    $('.burger').removeClass('active');
+    $('.sp-nav').removeClass('active');
+    $('body').removeClass('active');
+  });
   //-------------------ハンバーガーメニューここまで-------------------
 
 
@@ -173,8 +176,8 @@ $(function(){
   //---------------------記事ページのイメージの表示ここまで---------------
 
   //-------------------- 記事ページの固定ページネーションここから -----------------
-  if($("#single-point").length){
-    var pagination = $('#single-point').offset().top;
+  if($("#singlePoint").length){
+    var pagination = $('#singlePoint').offset().top;
     $(window).scroll(function(){
       if($(this).scrollTop()>pagination){
         $('#paginationFade').fadeOut(400);
@@ -200,15 +203,27 @@ $(function(){
   });
 
 
-$('window').click(function(){ 
-  alert("hi")
+  $('window').click(function(){ 
+    alert("hi")
+    });
+
+    $('#modal-wrapper').on('click', function(){
+      $('#modal-wrapper').fadeOut(600); 
+      $('body').removeClass('fixed');
+      // window.removeEventListener( 'touchmove' , movefun, { passive: false }   );
+    });
+
+      //コーディング練習一覧のモーダル
+  $('.cordingItem > a').on('click', function(){
+    var src = $(this).find('#pcImage').attr('src');
+    var alt = $(this).find('#pcImage').attr('alt');
+    $('#modal-image-wrapper > img').attr('src', src).attr('alt', alt);
+    $('#modal-wrapper').fadeIn(600);
+    $('body').addClass('fixed');
+    // window.addEventListener( 'touchmove' , movefun , { passive: false } );
+    return false;
   });
 
-  $('#modal-wrapper').on('click', function(){
-    $('#modal-wrapper').fadeOut(600); 
-    $('body').removeClass('fixed');
-    // window.removeEventListener( 'touchmove' , movefun, { passive: false }   );
+
   });
-
-
 });
