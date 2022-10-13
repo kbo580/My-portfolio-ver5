@@ -70,7 +70,7 @@
               <p class="works__desc">学習のアウトプットと備忘録のためのブログです<img src="<?php echo get_template_directory_uri(); ?>/images/svg/external-link.svg" alt=""><br>（外部サイトへ移動します）</p>
 
               <div class="blog__body">
-                <a href="" class="blog__image-wrap">
+                <a href="https://kbyt-programming.com/" target="_blank" class="blog__image-wrap">
                   <img src="<?php echo get_template_directory_uri(); ?>/images/blog-image.png" alt="ブログ">
                 </a>
   

@@ -52,7 +52,7 @@
             </li>
     
             <li class="sp-nav__list-item nav__list-item">
-              <a href="#" class="sp-nav__link nav__link nav__blog-wrap">blog<img src="<?php echo get_template_directory_uri(); ?>/images/svg/external-link-white.svg" alt=""></a>
+              <a href="https://kbyt-programming.com/" target="_blank" class="sp-nav__link nav__link nav__blog-wrap">blog<img src="<?php echo get_template_directory_uri(); ?>/images/svg/external-link-white.svg" alt=""></a>
             </li>
 
             <li class="nav__contact-btn-wrap">
@@ -87,7 +87,7 @@
             </li>
     
             <li class="pc-nav__list-item nav__list-item nav__blog-wrap">
-              <a href="404.html" class="pc-nav__link nav__link">blog<img src="<?php echo get_template_directory_uri(); ?>/images/svg/external-link.svg" alt=""></a>
+              <a href="https://kbyt-programming.com/" target="_blank" class="pc-nav__link nav__link">blog<img src="<?php echo get_template_directory_uri(); ?>/images/svg/external-link.svg" alt=""></a>
             </li>
             
           </ul>
@@ -120,7 +120,7 @@
             </li>
     
             <li class="sp-nav__list-item nav__list-item">
-              <a href="#" class="sp-nav__link nav__link nav__blog-wrap">blog<img src="<?php echo get_template_directory_uri(); ?>/images/svg/external-link-white.svg" alt=""></a>
+              <a href="https://kbyt-programming.com/" target="_blank" class="sp-nav__link nav__link nav__blog-wrap">blog<img src="<?php echo get_template_directory_uri(); ?>/images/svg/external-link-white.svg" alt=""></a>
             </li>
 
             <li class="nav__contact-btn-wrap">
@@ -155,7 +155,7 @@
             </li>
     
             <li class="pc-nav__list-item nav__list-item nav__blog-wrap">
-              <a href="" class="pc-nav__link nav__link">blog<img src="<?php echo get_template_directory_uri(); ?>/images/svg/external-link.svg" alt=""></a>
+              <a href="https://kbyt-programming.com/" target="_blank" class="pc-nav__link nav__link">blog<img src="<?php echo get_template_directory_uri(); ?>/images/svg/external-link.svg" alt=""></a>
             </li>
             
           </ul>
