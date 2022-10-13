@@ -1067,13 +1067,15 @@ body.active {
 .about::before {
   content: "";
   width: 110%;
-  background: #efefef;
+  background: #F5F5F5;
   height: 80%;
   display: block;
   position: absolute;
   top: 246px;
   z-index: -1;
   margin-left: calc(50% - 50vw);
+  -webkit-box-shadow: 3px 3px 5px #e3e5ea, -3px -3px 5px #fff;
+          box-shadow: 3px 3px 5px #e3e5ea, -3px -3px 5px #fff;
 }
 
 .about-right {
