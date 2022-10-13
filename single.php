@@ -19,7 +19,7 @@
           <div class="single-info__thum-wrap">
             <!-- サムネイル -->
             <div class="single-info__thum">
-              <img src="<?php echo get_template_directory_uri(); ?>/images/人材派遣のヒューベストpc-screen .png" alt=""  loading="lazy">
+              <img src="<?php echo CFS()->get('works_pc-image');?>" alt="<?php the_title(); ?>"  loading="lazy">
             </div>
             <!-- /サムネイル -->
 
