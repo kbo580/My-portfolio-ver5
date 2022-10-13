@@ -210,11 +210,6 @@ header,main,section,footer, div, ul, li, h1,h2,h3,dl,dt,dd{
       transition: all .4s;
     }
   }
-
-  //single専用ボタン設定
-  &.--single{
-    width: 200px;
-  }
 }
 
 .content-body{
@@ -303,7 +298,6 @@ header,main,section,footer, div, ul, li, h1,h2,h3,dl,dt,dd{
       transition: all .4s;
     }
   }
-  
 
   .square__btn-wrap:hover::after{
     background: linear-gradient(135deg, transparent 0% 50%, $whiteBase 50% 100%);
@@ -353,12 +347,6 @@ header,main,section,footer, div, ul, li, h1,h2,h3,dl,dt,dd{
   //四角ボタン
   .square__btn-wrap{
     margin-top: 90px;
-  }
-
-   //single専用ボタン設定
-  .square__btn.--single{
-    width: auto;
-    max-width: 300px;
   }
 
   .content-body{
@@ -624,7 +612,6 @@ body.active{
     transform-origin: 100% 0%;
     display: flex;
     flex-direction: row-reverse;
-    // border: 1px solid #000;
   }
 
   //ナビアイテム
@@ -1024,8 +1011,8 @@ body.active{
 .banners{
 
   &-item{
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    background-color: $whiteBase;;
+    border: 1px solid rgba(#ddd, 0.3);
+    background-color: $whiteBase;
   }
 
   &-image{
@@ -1573,7 +1560,6 @@ body.active{
 
 //--------- サイトの基本情報  --------- 
 .single-info{
-  // margin-top: 40px;
   margin-top: 0;
 
   &__explain{

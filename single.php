@@ -51,12 +51,18 @@
           </div>
           <!-- /single-list__wrap -->
 
-          <div class="square__btn-wrap">
-            <a href="<?php echo CFS()->get('works_url');?>" class="square__btn --single" target="_blank" >サイトへ<i class="fa-solid fa-up-right-from-square"></i></a>
-          </div>
-          
-          <p  class="single-info__attention">※BASIC認証をかけてあります。<br>お手数ですがid”<span class="fwb">portfolio</span>”, パスワード”<span class="fwb"><?php echo CFS()->get('works_pass');?></span>”を入力してご覧ください</p>     
+          <?php if(is_single(array(14, 210, 214))):?>
+            <p class="single-info__attention" style="text-align: center;">ポートフォリオに関してはリンクありません。</p>
+            
+          <?php else:?>
+            <div class="square__btn-wrap">
+              <a href="<?php echo CFS()->get('works_url');?>" class="square__btn --single" target="_blank" >サイトへ</a>
+            </div>
 
+            <p  class="single-info__attention">※BASIC認証をかけてあります。<br>お手数ですがid”<span class="fwb">portfolio</span>”, パスワード”<span class="fwb"><?php echo CFS()->get('works_pass');?></span>”を入力してご覧ください</p>  
+
+          <?php endif;?>
+          
         </div>
         <!-- /single-info -->
 
