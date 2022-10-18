@@ -26,7 +26,7 @@
 
           <div class="s--inner">
             <h3 class="sub-heading heading-common">練習用コーディング</h3>
-            <p class="works__desc">コーディングの練習で作成したサイトです。<br>(練習用サイトのためスクリーンショットのみです)</p>
+            <p class="works__desc">デザインカンプからコーディングしたサイトです。<br>デザインは他サイト様からお借りしております。デザインデータからの制作の目安にどうぞ</p>
 
             <ul class="webdesign__item-list works__list">
 
@@ -45,7 +45,7 @@
 
                   <li class="webdesign__item works__item cordingItem">
   
-                    <a href="/" class="webdesign__link">
+                    <a href="<?php the_permalink(); ?>" class="webdesign__link">
                       <div class="mask">
                         <div class="webdesign__body">
                           <h3 class="webdesign__title">タイトルタイトルタイトル</h3>
@@ -53,10 +53,8 @@
                         </div>
 
                         <figure class="webdesign__thum">
-                          <img src="<?php echo CFS()->get('image');?>" alt="<?php the_title(); ?>" loading="lazy" class="webdesign__img thum">
+                          <img src="<?php echo CFS()->get('cording-image');?>" alt="<?php the_title(); ?>" loading="lazy" class="webdesign__img thum">
                         </figure>
-
-                        <img src="<?php echo CFS()->get('pc-image');?>" alt="<?php the_title(); ?>" id="pcImage">
                         
                       </div>
                       <!-- /mask -->
@@ -73,16 +71,6 @@
   
             </ul>
             <!-- /works__item-list -->
-
-            <!-- モーダル -->
-            <div class="modal-wrapper" id="modal-wrapper">
-              <div class="close" id="close"></div>
-              
-              <div id="modal-image-wrapper" class="modal-image-wrapper">
-                <img src="" alt="">  
-              </div>
-            </div>
-            <!-- /モーダル -->
 
           </div>
           <!-- /works__cont -->

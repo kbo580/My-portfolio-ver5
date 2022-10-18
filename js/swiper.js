@@ -35,7 +35,7 @@ var mySwiper = new Swiper ('.mv-swiper', {
   fadeEffect: {
     crossFade: true
   },
-})
+});
 
 //------------------ メインビジュアルのswiperここまで----------------
 

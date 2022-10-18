@@ -32,7 +32,6 @@ body,h1,h2,h3,h4,h5,p,ul,li,ol,dl,dt,dd,figure,input,textarea {
   appearance: none;
   -webkit-appearance: none;
   border-radius: 0;
-
 }
 
 body {
@@ -43,7 +42,6 @@ body {
   color: $textColor;
   background: $whiteBase;
   position: relative;
-
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -63,18 +61,10 @@ i{
   padding-left: 8px;
 }
 
-
-header,main,section,footer, div, ul, li, h1,h2,h3,dl,dt,dd{
-  // background-color: rgba(0,200,100,0.1);
-  // border: 1px solid rgba(0,0,0,0.1);
-}
-
 .inner{
   margin: 0 auto;
   max-width: 1080px;
   width: 100%;
-  // background-color: rgba(241,92,168,0.2);
-  // border: 1px dashed #000;
   padding: 0 20px;
 }
 
@@ -85,11 +75,9 @@ header,main,section,footer, div, ul, li, h1,h2,h3,dl,dt,dd{
 .s--inner{
   margin: 100px auto 0;
   max-width: 900px;
-  // border: 3px solid green;
 }
 
 .contents{
-  // border: 1px solid #000;
   margin-top: 70px;
   margin-bottom: 80px;
 }
@@ -144,7 +132,7 @@ header,main,section,footer, div, ul, li, h1,h2,h3,dl,dt,dd{
 .btn{
   position: relative;
   padding-right: 50px;
-  transition: all .4s;
+  // transition: all .4s;
   font-family: "Montserrat";
 
   // 矢印
@@ -153,7 +141,6 @@ header,main,section,footer, div, ul, li, h1,h2,h3,dl,dt,dd{
     content: "";
     position: absolute;
     height: 1px;
-    transition: all 0.3s;
     background: #333;
   }
 
@@ -196,7 +183,6 @@ header,main,section,footer, div, ul, li, h1,h2,h3,dl,dt,dd{
     max-width: 300px;
     margin-top: 80px;
     position: relative;
-    transition: all .4s;
 
     //あしらい
     &::after{
@@ -255,7 +241,6 @@ header,main,section,footer, div, ul, li, h1,h2,h3,dl,dt,dd{
 
 // パンクズ  
 .breadcrumbs{
-  // background-color: #CED7DC;
   height: 40px;
   display: flex;
   align-items: center;
@@ -270,38 +255,6 @@ header,main,section,footer, div, ul, li, h1,h2,h3,dl,dt,dd{
   margin-left: calc(100 / 1280 *100vw);
   margin-right: calc(100 / 1280 *100vw);
   padding: 0 20px;
-}
-
-// hover時の動き 
-@media (hover: hover){
-  //ボタン
-  .btn{
-
-    // 横棒
-    &:hover::before{
-      right: -5%;
-    }
-
-    // 縦棒
-    &:hover::after{
-      right: -5%;
-    }
-  }
-
-  //四角ボタン
-  .square__btn-wrap:hover{
-    background-color: #121212;
-    color: $whiteBase;
-    
-    .form-btn{
-      color: $whiteBase;
-      transition: all .4s;
-    }
-  }
-
-  .square__btn-wrap:hover::after{
-    background: linear-gradient(135deg, transparent 0% 50%, $whiteBase 50% 100%);
-  }
 }
 
 @media (min-width: 765px) {
@@ -352,7 +305,6 @@ header,main,section,footer, div, ul, li, h1,h2,h3,dl,dt,dd{
   .content-body{
     margin-top: 90px;
   }
-
 
 }
 
@@ -652,21 +604,6 @@ body.active{
     align-items: center;
     justify-content: center;
   }
-}
-
-
-//ナビアイテムhover時の動き
-@media (hover: hover){
-  .nav__link:hover{
-    opacity: .6;
-  }
-  
-  .nav__contact-btn-wrap{
-    &:hover{
-      opacity: .6;
-    }
-  }
-
 }
 
 @media (min-width: 765px) {
@@ -970,30 +907,6 @@ body.active{
   }
 }
 
-// hover時の動き 
-@media (hover: hover) {
-  .webdesign__item:hover .mask::before{
-    content:"";
-    position: absolute;
-    z-index:2;
-    top:20px;
-    left:20px;
-    width: calc(100% - 40px);
-    height: calc(100% - 40px);
-    background:rgba(0,0,0,0.5);
-    border-radius: 8px;
-  }
-  
-  .webdesign__item:hover img{
-    transform: scale(1.2);
-    filter: blur(2px);
-  }
-  
-  .webdesign__item:hover .webdesign__body{
-    opacity:1;
-  }
-}
-
 ////////// ブログ //////////
 .blog{
   &__image-wrap{
@@ -1129,15 +1042,6 @@ body.active{
     }
   }
 
-  // hover時の動き 
-  @media (hover: hover) {
-    .webdesign__item:hover .mask::before{
-      top:10px;
-      left:10px;
-      width: calc(100% - 20px);
-      height: calc(100% - 20px);
-    }
-  }
   ////////// ブログ //////////
   .blog{
     &__image-wrap{
@@ -1427,48 +1331,6 @@ body.active{
 }
 
 /* -------------------------------------------- */
-/*  */
-/* -------------------------------------------- */
-/* 下から */
-.fadeUpTrigger{
-  opacity: 0;
-}
-
-.fadeUpAnime {
-  animation-name:fadeUpAnime;
-  animation-duration: 1s;
-  animation-fill-mode:forwards;
-  opacity:0;
-}
-
-.delay-2{
-  animation-delay: 0.4s;
-}
-  
-.delay-3{
-  animation-delay: 0.6s;
-}
-
-.delay-4{
-  animation-delay: 0.8s;
-}
-
-@keyframes fadeUpAnime{
-  from {
-    opacity: 0;
-    transform: translateY(100px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-@media (min-width: 765px) {
-
-
-}
-/* -------------------------------------------- */
 /* singleページ */
 /* -------------------------------------------- */
 .single{
@@ -1552,7 +1414,6 @@ body.active{
 .next{
   a{
     display: block;
-    transition: background .4s;
     padding: 0 0.5em;
     border-radius: 4px;
   }
@@ -1842,44 +1703,6 @@ body.active{
   }
 }
 
-
-//ボタンhover
-@media (hover: hover){
-  .toggle-btn:hover{
-    background: $textColor;
-    color: $whiteBase;
-  }
-
-  //pointの左の矢印
-  .pointSwiper__button.--left:hover::before,
-  .pointSwiper__button.--left:hover::after{
-    left: 0%;
-  }
-
-  //pointの右の矢印
-  .pointSwiper__button.--right:hover::before{
-    left: 15%;
-  }
-
-  .pointSwiper__button.--right:hover::after{
-    right: 0%;
-  }
-
-  //ページネーション
-  .pagination{
-    .to-works,
-    .prev,
-    .next{
-      a{
-        transition: background .4s;
-        &:hover{
-          background: $accsentColor;
-        }
-      }
-    }
-  }
-}
-
 @media (min-width: 765px) {
   .single{
 
@@ -2065,17 +1888,6 @@ body.active{
   }
 }
 
-// hover時の動き 
-@media (hover: hover){
-  .nf-page__link{
-    transition: opacity .4s;
-  
-    &:hover{
-      opacity: .7;
-    }
-  }
-}
-
 @media (min-width: 765px) {
   .nf-page{
 
@@ -2118,14 +1930,7 @@ body.active{
 .prof-sec{
   padding: 50px 0;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-  // background: linear-gradient(to bottom, #C2E9FB, #A1C4FD);
 }
-
-// .prof-sec-first{
-//   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 90%);
-//   padding-bottom: 150px;
-//   margin-bottom: -140px;
-// }
 
 //---------------------about-me------------------
 .about-me{
@@ -2177,6 +1982,7 @@ body.active{
   //リスト
   &-list{
     width: 100%;
+    width : calc((100% - 30px) / 2);
     margin-top: 40px;
 
     //spflex用
@@ -2244,7 +2050,7 @@ body.active{
   
     //リスト
     &-list{
-      width : calc((100% - 30px) / 2);
+      width : calc((100% - 60px) / 3);
 
      //spflex用
       &__cont{
@@ -2269,16 +2075,8 @@ body.active{
 
 }
 
-@media (min-width: 992px){
-  .skills{
-    &-list{
-      width : calc((100% - 90px) / 4);
-    }
-  }
-}
-
 /* -------------------------------------------- */
-/*  */
+/* contactページ */
 /* -------------------------------------------- */
 .contact{
   &__wrapper{
@@ -2361,6 +2159,7 @@ body.active{
   display: block;
   width: 100%;
   cursor: pointer;
+  color: $textColor;
 }
 
 /* contact form7用 */ 
@@ -2467,24 +2266,182 @@ span.wpcf7-not-valid-tip {
 
 }
 
-//hover時の動き
+
+/* -------------------------------------------- */
+/* コーディング */
+/* -------------------------------------------- */
+.cording__link{
+  color:#1B0DAB;
+}
+@media (min-width: 765px) {
+
+
+}
+
+
+
+/* -------------------------------------------- */
+/* hover時の動き */
+/* -------------------------------------------- */
 @media (hover: hover){
-  .banners{
-    &__image-wrap{
-      transition: opacity .4s;
-      &:hover{
-        opacity: .6;
+  //opacity系を一元管理
+  .nav__link,
+  .nav__contact-btn-wrap,
+  .cording__link,
+  .nf-page__link,
+  .banners__image-wrap{
+    transition: opacity .4s;
+    &:hover{
+      opacity: .6;
+    }
+  }
+
+  //more viewボタン
+  .btn{
+
+    //矢印
+    &::before,
+    &::after{
+      transition: all 0.4s;
+    }
+
+    // 横棒
+    &:hover::before{
+      right: -5%;
+    }
+
+    // 縦棒
+    &:hover::after{
+      right: -5%;
+    }
+  }
+
+  //四角ボタン
+  .square__btn-wrap{
+    &:hover{
+      background-color: #121212;
+      color: $whiteBase;
+      transition: all .4s;
+
+      .form-btn{
+        color: $whiteBase;
+      }
+
+      &::after{
+        background: linear-gradient(135deg, transparent 0% 50%, $whiteBase 50% 100%);
       }
     }
   }
+
+  .webdesign__item:hover .mask::before{
+    content:"";
+    position: absolute;
+    z-index:2;
+    top:20px;
+    left:20px;
+    width: calc(100% - 40px);
+    height: calc(100% - 40px);
+    background:rgba(0,0,0,0.5);
+    border-radius: 8px;
+  }
+
+  .webdesign__item:hover img{
+    transform: scale(1.2);
+    filter: blur(2px);
+  }
+
+  .webdesign__item:hover .webdesign__body{
+    opacity:1;
+  }
+
+  .toggle-btn:hover{
+    background: $textColor;
+    color: $whiteBase;
+  }
+
+  //pointの左の矢印
+  .pointSwiper__button.--left:hover::before,
+  .pointSwiper__button.--left:hover::after{
+    left: 0%;
+  }
+
+  //pointの右の矢印
+  .pointSwiper__button.--right:hover::before{
+    left: 15%;
+  }
+
+  .pointSwiper__button.--right:hover::after{
+    right: 0%;
+  }
+
+  //記事ページのページネーション
+  .pagination{
+    .to-works,
+    .prev,
+    .next{
+      a{
+        transition: all .4s;
+        &:hover{
+          background: $textColor;
+          color: #ffffff;
+        }
+      }
+    }
+  }
+
+}
+
+
+@media (min-width: 765px) {
+  @media (hover: hover){
+    .webdesign__item:hover .mask::before{
+      top:10px;
+      left:10px;
+      width: calc(100% - 20px);
+      height: calc(100% - 20px);
+    }
+  }
+
 }
 
 
 /* -------------------------------------------- */
-/* アーカイブページ */
+/* アニメーション */
 /* -------------------------------------------- */
-#pcImage{
-  display: none;
+/* 下から */
+.fadeUpTrigger{
+  opacity: 0;
+}
+
+.fadeUpAnime {
+  animation-name:fadeUpAnime;
+  animation-duration: 1s;
+  animation-fill-mode:forwards;
+  opacity:0;
+}
+
+.delay-2{
+  animation-delay: 0.4s;
+}
+  
+.delay-3{
+  animation-delay: 0.6s;
+}
+
+.delay-4{
+  animation-delay: 0.8s;
+}
+
+@keyframes fadeUpAnime{
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 @media (min-width: 765px) {
 

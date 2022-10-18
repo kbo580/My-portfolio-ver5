@@ -72,6 +72,7 @@
               <div class="blog__body">
                 <a href="https://kbyt-programming.com/" target="_blank" class="blog__image-wrap">
                   <img src="<?php echo get_template_directory_uri(); ?>/images/blog-image.png" alt="ブログ">
+                  <!-- <img src="<?php echo get_theme_file_uri(); ?>/images/blog-image.png" alt="ブログ"> -->
                 </a>
   
                 <span class="ashirai blog__ashirai en-title">BLOG</span>

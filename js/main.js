@@ -221,7 +221,7 @@ jQuery(function($){
     $('#modal-wrapper').fadeIn(600);
     $('body').addClass('fixed');
     // window.addEventListener( 'touchmove' , movefun , { passive: false } );
-    return false;
+    // return false;
   });
 
 

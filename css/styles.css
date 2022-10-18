@@ -111,16 +111,12 @@ i {
 .btn {
   position: relative;
   padding-right: 50px;
-  -webkit-transition: all 0.4s;
-  transition: all 0.4s;
   font-family: "Montserrat";
 }
 .btn::before, .btn::after {
   content: "";
   position: absolute;
   height: 1px;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
   background: #333;
 }
 .btn::before {
@@ -152,8 +148,6 @@ i {
   max-width: 300px;
   margin-top: 80px;
   position: relative;
-  -webkit-transition: all 0.4s;
-  transition: all 0.4s;
 }
 .square__btn-wrap::after {
   content: "";
@@ -229,26 +223,6 @@ i {
   padding: 0 20px;
 }
 
-@media (hover: hover) {
-  .btn:hover::before {
-    right: -5%;
-  }
-  .btn:hover::after {
-    right: -5%;
-  }
-  .square__btn-wrap:hover {
-    background-color: #121212;
-    color: #fafafa;
-  }
-  .square__btn-wrap:hover .form-btn {
-    color: #fafafa;
-    -webkit-transition: all 0.4s;
-    transition: all 0.4s;
-  }
-  .square__btn-wrap:hover::after {
-    background: linear-gradient(135deg, transparent 0% 50%, #fafafa 50% 100%);
-  }
-}
 @media (min-width: 765px) {
   .s--inner {
     margin-top: 150px;
@@ -579,14 +553,6 @@ body.active {
           justify-content: center;
 }
 
-@media (hover: hover) {
-  .nav__link:hover {
-    opacity: 0.6;
-  }
-  .nav__contact-btn-wrap:hover {
-    opacity: 0.6;
-  }
-}
 @media (min-width: 765px) {
   .sp-nav {
     display: none;
@@ -902,28 +868,6 @@ body.active {
   display: none;
 }
 
-@media (hover: hover) {
-  .webdesign__item:hover .mask::before {
-    content: "";
-    position: absolute;
-    z-index: 2;
-    top: 20px;
-    left: 20px;
-    width: calc(100% - 40px);
-    height: calc(100% - 40px);
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 8px;
-  }
-  .webdesign__item:hover img {
-    -webkit-transform: scale(1.2);
-            transform: scale(1.2);
-    -webkit-filter: blur(2px);
-            filter: blur(2px);
-  }
-  .webdesign__item:hover .webdesign__body {
-    opacity: 1;
-  }
-}
 .blog__image-wrap {
   margin-top: 40px;
   display: block;
@@ -1030,16 +974,6 @@ body.active {
   .webdesign__title {
     font-size: 1rem;
   }
-}
-@media (min-width: 765px) and (hover: hover) {
-  .webdesign__item:hover .mask::before {
-    top: 10px;
-    left: 10px;
-    width: calc(100% - 20px);
-    height: calc(100% - 20px);
-  }
-}
-@media (min-width: 765px) {
   .blog__image-wrap {
     margin: 40px auto 0;
     max-width: 500px;
@@ -1300,64 +1234,6 @@ body.active {
 }
 
 /* -------------------------------------------- */
-/*  */
-/* -------------------------------------------- */
-/* 下から */
-.fadeUpTrigger {
-  opacity: 0;
-}
-
-.fadeUpAnime {
-  -webkit-animation-name: fadeUpAnime;
-          animation-name: fadeUpAnime;
-  -webkit-animation-duration: 1s;
-          animation-duration: 1s;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-  opacity: 0;
-}
-
-.delay-2 {
-  -webkit-animation-delay: 0.4s;
-          animation-delay: 0.4s;
-}
-
-.delay-3 {
-  -webkit-animation-delay: 0.6s;
-          animation-delay: 0.6s;
-}
-
-.delay-4 {
-  -webkit-animation-delay: 0.8s;
-          animation-delay: 0.8s;
-}
-
-@-webkit-keyframes fadeUpAnime {
-  from {
-    opacity: 0;
-    -webkit-transform: translateY(100px);
-            transform: translateY(100px);
-  }
-  to {
-    opacity: 1;
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
-}
-
-@keyframes fadeUpAnime {
-  from {
-    opacity: 0;
-    -webkit-transform: translateY(100px);
-            transform: translateY(100px);
-  }
-  to {
-    opacity: 1;
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
-}
-/* -------------------------------------------- */
 /* singleページ */
 /* -------------------------------------------- */
 .single__wrapper {
@@ -1431,8 +1307,6 @@ body.active {
 .prev a,
 .next a {
   display: block;
-  -webkit-transition: background 0.4s;
-  transition: background 0.4s;
   padding: 0 0.5em;
   border-radius: 4px;
 }
@@ -1692,33 +1566,6 @@ body.active {
           transform: rotate(35deg);
 }
 
-@media (hover: hover) {
-  .toggle-btn:hover {
-    background: #333333;
-    color: #fafafa;
-  }
-  .pointSwiper__button.--left:hover::before,
-.pointSwiper__button.--left:hover::after {
-    left: 0%;
-  }
-  .pointSwiper__button.--right:hover::before {
-    left: 15%;
-  }
-  .pointSwiper__button.--right:hover::after {
-    right: 0%;
-  }
-  .pagination .to-works a,
-.pagination .prev a,
-.pagination .next a {
-    -webkit-transition: background 0.4s;
-    transition: background 0.4s;
-  }
-  .pagination .to-works a:hover,
-.pagination .prev a:hover,
-.pagination .next a:hover {
-    background: #A40E4C;
-  }
-}
 @media (min-width: 765px) {
   .single-sub-heading {
     font-size: 2.5rem;
@@ -1838,15 +1685,6 @@ body.active {
   text-decoration: underline;
 }
 
-@media (hover: hover) {
-  .nf-page__link {
-    -webkit-transition: opacity 0.4s;
-    transition: opacity 0.4s;
-  }
-  .nf-page__link:hover {
-    opacity: 0.7;
-  }
-}
 @media (min-width: 765px) {
   .nf-page__wrapper {
     margin-left: 7.8125vw;
@@ -1914,6 +1752,7 @@ body.active {
 }
 .skills-list {
   width: 100%;
+  width: calc((100% - 30px) / 2);
   margin-top: 40px;
 }
 .skills-list__cont {
@@ -1966,7 +1805,7 @@ body.active {
     font-size: 1.5rem;
   }
   .skills-list {
-    width: calc((100% - 30px) / 2);
+    width: calc((100% - 60px) / 3);
   }
   .skills-list__cont {
     display: block;
@@ -1982,13 +1821,8 @@ body.active {
     height: 80px;
   }
 }
-@media (min-width: 992px) {
-  .skills-list {
-    width: calc((100% - 90px) / 4);
-  }
-}
 /* -------------------------------------------- */
-/*  */
+/* contactページ */
 /* -------------------------------------------- */
 .contact__wrapper {
   max-width: 600px;
@@ -2071,6 +1905,7 @@ body.active {
   display: block;
   width: 100%;
   cursor: pointer;
+  color: #333333;
 }
 
 /* contact form7用 */
@@ -2165,22 +2000,167 @@ span.wpcf7-not-valid-tip::before {
   border: 3px solid rgba(255, 255, 255, 0.1);
 }
 
+/* -------------------------------------------- */
+/* コーディング */
+/* -------------------------------------------- */
+.cording__link {
+  color: #1B0DAB;
+}
+
+/* -------------------------------------------- */
+/* hover時の動き */
+/* -------------------------------------------- */
 @media (hover: hover) {
-  .banners__image-wrap {
+  .nav__link,
+.nav__contact-btn-wrap,
+.cording__link,
+.nf-page__link,
+.banners__image-wrap {
     -webkit-transition: opacity 0.4s;
     transition: opacity 0.4s;
   }
-  .banners__image-wrap:hover {
+  .nav__link:hover,
+.nav__contact-btn-wrap:hover,
+.cording__link:hover,
+.nf-page__link:hover,
+.banners__image-wrap:hover {
     opacity: 0.6;
+  }
+  .btn::before, .btn::after {
+    -webkit-transition: all 0.4s;
+    transition: all 0.4s;
+  }
+  .btn:hover::before {
+    right: -5%;
+  }
+  .btn:hover::after {
+    right: -5%;
+  }
+  .square__btn-wrap:hover {
+    background-color: #121212;
+    color: #fafafa;
+    -webkit-transition: all 0.4s;
+    transition: all 0.4s;
+  }
+  .square__btn-wrap:hover .form-btn {
+    color: #fafafa;
+  }
+  .square__btn-wrap:hover::after {
+    background: linear-gradient(135deg, transparent 0% 50%, #fafafa 50% 100%);
+  }
+  .webdesign__item:hover .mask::before {
+    content: "";
+    position: absolute;
+    z-index: 2;
+    top: 20px;
+    left: 20px;
+    width: calc(100% - 40px);
+    height: calc(100% - 40px);
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+  }
+  .webdesign__item:hover img {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+    -webkit-filter: blur(2px);
+            filter: blur(2px);
+  }
+  .webdesign__item:hover .webdesign__body {
+    opacity: 1;
+  }
+  .toggle-btn:hover {
+    background: #333333;
+    color: #fafafa;
+  }
+  .pointSwiper__button.--left:hover::before,
+.pointSwiper__button.--left:hover::after {
+    left: 0%;
+  }
+  .pointSwiper__button.--right:hover::before {
+    left: 15%;
+  }
+  .pointSwiper__button.--right:hover::after {
+    right: 0%;
+  }
+  .pagination .to-works a,
+.pagination .prev a,
+.pagination .next a {
+    -webkit-transition: all 0.4s;
+    transition: all 0.4s;
+  }
+  .pagination .to-works a:hover,
+.pagination .prev a:hover,
+.pagination .next a:hover {
+    background: #333333;
+    color: #ffffff;
+  }
+}
+@media (min-width: 765px) and (hover: hover) {
+  .webdesign__item:hover .mask::before {
+    top: 10px;
+    left: 10px;
+    width: calc(100% - 20px);
+    height: calc(100% - 20px);
   }
 }
 /* -------------------------------------------- */
-/* アーカイブページ */
+/* アニメーション */
 /* -------------------------------------------- */
-#pcImage {
-  display: none;
+/* 下から */
+.fadeUpTrigger {
+  opacity: 0;
 }
 
+.fadeUpAnime {
+  -webkit-animation-name: fadeUpAnime;
+          animation-name: fadeUpAnime;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+.delay-2 {
+  -webkit-animation-delay: 0.4s;
+          animation-delay: 0.4s;
+}
+
+.delay-3 {
+  -webkit-animation-delay: 0.6s;
+          animation-delay: 0.6s;
+}
+
+.delay-4 {
+  -webkit-animation-delay: 0.8s;
+          animation-delay: 0.8s;
+}
+
+@-webkit-keyframes fadeUpAnime {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(100px);
+            transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes fadeUpAnime {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(100px);
+            transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
 /* -------------------------------------------- */
 /*  */
 /* -------------------------------------------- */
